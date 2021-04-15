@@ -231,6 +231,9 @@
                                 <rect key="frame" x="319" y="686" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="send:" destination="hFJ-gS-xle" eventType="touchUpInside" id="MRw-Ni-gqn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wnd-K0-61b"/>
@@ -238,6 +241,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="6b6-4S-Sqd"/>
                     <connections>
+                        <outlet property="messageTextField" destination="wHx-V5-wR4" id="XMc-SC-qfC"/>
                         <outlet property="tableView" destination="6xl-42-RtO" id="z53-oK-HLa"/>
                     </connections>
                 </viewController>
