@@ -66,6 +66,9 @@
                                 <state key="normal" title="新規登録">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="register:" destination="Ybe-0k-oFc" eventType="touchUpInside" id="dMc-r9-rlF"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1C-1n-UUs">
                                 <rect key="frame" x="41" y="479" width="308" height="34"/>
@@ -107,7 +110,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKi-PO-xBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kaP-pq-iRN"/>
+                <tapGestureRecognizer id="kaP-pq-iRN">
+                    <connections>
+                        <action selector="tapImageView:" destination="Ybe-0k-oFc" id="NoX-FP-TdI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1789.2307692307693" y="81.042654028436019"/>
         </scene>
