@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85062719DC1518352CF4AFF5 /* Pods_Swift_Chuzai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503700576A3C08F6DA837C1F /* Pods_Swift_Chuzai.framework */; };
 		D539449E2628100C00DAC940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539449D2628100C00DAC940 /* AppDelegate.swift */; };
 		D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539449F2628100C00DAC940 /* SceneDelegate.swift */; };
 		D53944A22628100C00DAC940 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944A12628100C00DAC940 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		019F284A2B82B69A3FE313D4 /* Pods-Swift Chuzai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Chuzai.release.xcconfig"; path = "Target Support Files/Pods-Swift Chuzai/Pods-Swift Chuzai.release.xcconfig"; sourceTree = "<group>"; };
+		3C462C5C6F8EABC19BAADF15 /* Pods-Swift Chuzai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Chuzai.debug.xcconfig"; path = "Target Support Files/Pods-Swift Chuzai/Pods-Swift Chuzai.debug.xcconfig"; sourceTree = "<group>"; };
+		503700576A3C08F6DA837C1F /* Pods_Swift_Chuzai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Chuzai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D539449A2628100C00DAC940 /* Swift Chuzai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Chuzai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D539449D2628100C00DAC940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D539449F2628100C00DAC940 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85062719DC1518352CF4AFF5 /* Pods_Swift_Chuzai.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62C9E1D6D11B9CCC2DC80F80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				503700576A3C08F6DA837C1F /* Pods_Swift_Chuzai.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6852720E3CA30746EA3A32BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C462C5C6F8EABC19BAADF15 /* Pods-Swift Chuzai.debug.xcconfig */,
+				019F284A2B82B69A3FE313D4 /* Pods-Swift Chuzai.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D53944912628100C00DAC940 = {
 			isa = PBXGroup;
 			children = (
 				D539449C2628100C00DAC940 /* Swift Chuzai */,
 				D539449B2628100C00DAC940 /* Products */,
+				6852720E3CA30746EA3A32BA /* Pods */,
+				62C9E1D6D11B9CCC2DC80F80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D53944AE2628101000DAC940 /* Build configuration list for PBXNativeTarget "Swift Chuzai" */;
 			buildPhases = (
+				E715EDC93957381BE7A019A0 /* [CP] Check Pods Manifest.lock */,
 				D53944962628100C00DAC940 /* Sources */,
 				D53944972628100C00DAC940 /* Frameworks */,
 				D53944982628100C00DAC940 /* Resources */,
+				D2B77B4624569146938DA639 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D2B77B4624569146938DA639 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift Chuzai/Pods-Swift Chuzai-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift Chuzai/Pods-Swift Chuzai-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift Chuzai/Pods-Swift Chuzai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E715EDC93957381BE7A019A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swift Chuzai-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D53944962628100C00DAC940 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		D53944AF2628101000DAC940 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C462C5C6F8EABC19BAADF15 /* Pods-Swift Chuzai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		D53944B02628101000DAC940 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 019F284A2B82B69A3FE313D4 /* Pods-Swift Chuzai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
