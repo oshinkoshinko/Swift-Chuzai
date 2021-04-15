@@ -19,6 +19,7 @@
 		D53944D5262836A600DAC940 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944D4262836A600DAC940 /* CheckPermission.swift */; };
 		D53944D92628495A00DAC940 /* SendToDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944D82628495A00DAC940 /* SendToDBModel.swift */; };
 		D53944E1262871F000DAC940 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E0262871F000DAC940 /* TabBarController.swift */; };
+		D53944E4262872BB00DAC940 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E3262872BB00DAC940 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D53944D4262836A600DAC940 /* CheckPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
 		D53944D82628495A00DAC940 /* SendToDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToDBModel.swift; sourceTree = "<group>"; };
 		D53944E0262871F000DAC940 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D53944E3262872BB00DAC940 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				D53944A12628100C00DAC940 /* ViewController.swift */,
 				D53944D12628367200DAC940 /* RegisterViewController.swift */,
 				D53944E0262871F000DAC940 /* TabBarController.swift */,
+				D53944E3262872BB00DAC940 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				D53944D5262836A600DAC940 /* CheckPermission.swift in Sources */,
 				D53944A22628100C00DAC940 /* ViewController.swift in Sources */,
+				D53944E4262872BB00DAC940 /* ChatViewController.swift in Sources */,
 				D539449E2628100C00DAC940 /* AppDelegate.swift in Sources */,
 				D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */,
 				D53944E1262871F000DAC940 /* TabBarController.swift in Sources */,

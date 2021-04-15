@@ -201,7 +201,7 @@
         <!--Item 1-->
         <scene sceneID="EEK-j8-Oec">
             <objects>
-                <viewController id="hFJ-gS-xle" sceneMemberID="viewController">
+                <viewController id="hFJ-gS-xle" customClass="ChatViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzh-Mn-yev">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,6 +237,9 @@
                         <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="6b6-4S-Sqd"/>
+                    <connections>
+                        <outlet property="tableView" destination="6xl-42-RtO" id="z53-oK-HLa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPX-qk-1TK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
