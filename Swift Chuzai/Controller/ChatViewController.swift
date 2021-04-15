@@ -28,6 +28,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
         //userimageにurlが入っていたら
         if UserDefaults.standard.object(forKey: "userimage") != nil{
             
@@ -44,7 +46,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         self.navigationItem.title = roomName
         
-
+        loadMessages(roomName: roomName)
     }
     
     //ロード　Firebaseの全メッセージ取得
@@ -111,7 +113,41 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     //セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MessageCell
+        
+        let message = messages[indexPath.row]
+        cell.label.text = message.body
+        
+        if message.sender == Auth.auth().currentUser?.email{
+            
+            //ユーザのメッセージであれば右側アイコンのみ表示
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            //アイコンをセット
+            cell.rightImageView.sd_setImage(with: URL(string: imageString), completed: nil)
+            cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
+            //セルの色分け
+            cell.backView.backgroundColor = .systemTeal
+            cell.label.textColor = .white
+
+        }else{
+            
+            //別ユーザのメッセージであれば左側アイコンのみ表示
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            //アイコンをセット
+            cell.leftImageView.sd_setImage(with: URL(string: imageString), completed: nil)
+            cell.rightImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
+            //セルの色分け
+            cell.backView.backgroundColor = .orange
+            cell.label.textColor = .white
+            
+            
+        }
+        
+        return cell
+        
     }
     
     @IBAction func send(_ sender: Any) {
