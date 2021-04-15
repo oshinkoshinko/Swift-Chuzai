@@ -9,7 +9,9 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegate {
+
+    
     
     
     @IBOutlet weak var userNameTextField: UITextField!
@@ -17,13 +19,16 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    var sendToDBModel = SendToDBModel()
+    var urlString = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //カメラ許可画面を出す
         let checkModel = CheckPermission()
         checkModel.showCheckPermission()
-        
+        sendToDBModel.sendProfileDelegate = self
         
     }
     
@@ -31,8 +36,42 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBAction func register(_ sender: Any) {
         
         //各TextFieldが空でないか
+        if userNameTextField.text?.isEmpty != true && emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
+            
+            //FirebaseのAuthentificationに入る
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+                
+                if error != nil{
+                    
+                    print(error.debugDescription)
+                    return
+                    
+                }
+                
+                //UIImageをデータ型へ
+                let data = image.jpegData(compressionQuality: 1.0)
+                
+                //登録したプロフ写真をFirebaseStorageへ送信
+                self.sendToDBModel.sendProfileImageData(data: data!)
+                
+            }
+            
+            
+        }
         
         //登録
+        
+    }
+    
+    func sendProfileOKDelegate(url: String) {
+        
+        urlString = url
+        //firebasestoreからurlが返ってきているか
+        if urlString.isEmpty != true{
+            //画面遷移
+            self.performSegue(withIdentifier: "chat", sender: nil)
+            
+        }
         
     }
     

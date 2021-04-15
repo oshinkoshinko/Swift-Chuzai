@@ -245,7 +245,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3rb-Km-RKo">
             <objects>
-                <tabBarController id="0rK-Wx-QaN" sceneMemberID="viewController">
+                <tabBarController id="0rK-Wx-QaN" customClass="TabBarController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8bl-le-Hst"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DbP-Fw-20V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
