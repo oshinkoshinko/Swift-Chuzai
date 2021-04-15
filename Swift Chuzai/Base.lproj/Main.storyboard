@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="81.696428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="ZHf-Lr-Tva">
             <objects>
-                <viewController id="Ybe-0k-oFc" sceneMemberID="viewController">
+                <viewController id="Ybe-0k-oFc" customClass="RegisterViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zpf-RF-YlQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,6 +99,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="LpW-we-m10"/>
                     <connections>
+                        <outlet property="emailTextField" destination="t1C-1n-UUs" id="avJ-oV-Aqv"/>
+                        <outlet property="passwordTextField" destination="fKk-i8-Lat" id="IJI-PG-0oQ"/>
+                        <outlet property="profileImageView" destination="00p-g2-ysE" id="vQw-dh-ArB"/>
+                        <outlet property="userNameTextField" destination="MH4-Mc-6bR" id="UdT-DB-IIU"/>
                         <segue destination="0rK-Wx-QaN" kind="show" id="J6C-cu-626"/>
                     </connections>
                 </viewController>
