@@ -21,6 +21,8 @@
 		D53944E1262871F000DAC940 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E0262871F000DAC940 /* TabBarController.swift */; };
 		D53944E4262872BB00DAC940 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E3262872BB00DAC940 /* ChatViewController.swift */; };
 		D53944E726287D4900DAC940 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E626287D4900DAC940 /* Message.swift */; };
+		D53944EB26288F8A00DAC940 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E926288F8A00DAC940 /* MessageCell.swift */; };
+		D53944EC26288F8A00DAC940 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53944EA26288F8A00DAC940 /* MessageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		D53944E0262871F000DAC940 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D53944E3262872BB00DAC940 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D53944E626287D4900DAC940 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D53944E926288F8A00DAC940 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		D53944EA26288F8A00DAC940 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				D53944CF2628364800DAC940 /* Model */,
 				D53944CE2628363200DAC940 /* Controller */,
 				D53944A32628100C00DAC940 /* Main.storyboard */,
+				D53944E926288F8A00DAC940 /* MessageCell.swift */,
+				D53944EA26288F8A00DAC940 /* MessageCell.xib */,
 				D53944A62628101000DAC940 /* Assets.xcassets */,
 				D53944A82628101000DAC940 /* LaunchScreen.storyboard */,
 				D53944AB2628101000DAC940 /* Info.plist */,
@@ -187,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53944EC26288F8A00DAC940 /* MessageCell.xib in Resources */,
 				D53944AA2628101000DAC940 /* LaunchScreen.storyboard in Resources */,
 				D53944A72628101000DAC940 /* Assets.xcassets in Resources */,
 				D53944A52628100C00DAC940 /* Main.storyboard in Resources */,
@@ -244,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D53944D5262836A600DAC940 /* CheckPermission.swift in Sources */,
+				D53944EB26288F8A00DAC940 /* MessageCell.swift in Sources */,
 				D53944A22628100C00DAC940 /* ViewController.swift in Sources */,
 				D53944E4262872BB00DAC940 /* ChatViewController.swift in Sources */,
 				D53944E726287D4900DAC940 /* Message.swift in Sources */,
