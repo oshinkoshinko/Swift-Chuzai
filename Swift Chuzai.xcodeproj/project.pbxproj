@@ -15,6 +15,8 @@
 		D53944A72628101000DAC940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53944A62628101000DAC940 /* Assets.xcassets */; };
 		D53944AA2628101000DAC940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D53944A82628101000DAC940 /* LaunchScreen.storyboard */; };
 		D53944CC2628345500DAC940 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = D53944CB2628345500DAC940 /* GoogleService-Info (1).plist */; };
+		D53944D22628367200DAC940 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944D12628367200DAC940 /* RegisterViewController.swift */; };
+		D53944D5262836A600DAC940 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944D4262836A600DAC940 /* CheckPermission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		D53944A92628101000DAC940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D53944AB2628101000DAC940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D53944CB2628345500DAC940 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		D53944D12628367200DAC940 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D53944D4262836A600DAC940 /* CheckPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				D539449D2628100C00DAC940 /* AppDelegate.swift */,
-				D539449F2628100C00DAC940 /* SceneDelegate.swift */,
-				D53944A12628100C00DAC940 /* ViewController.swift */,
+				D53944CF2628364800DAC940 /* Model */,
+				D53944CE2628363200DAC940 /* Controller */,
 				D53944A32628100C00DAC940 /* Main.storyboard */,
 				D53944A62628101000DAC940 /* Assets.xcassets */,
 				D53944A82628101000DAC940 /* LaunchScreen.storyboard */,
@@ -92,6 +96,24 @@
 				D53944CB2628345500DAC940 /* GoogleService-Info (1).plist */,
 			);
 			path = "Swift Chuzai";
+			sourceTree = "<group>";
+		};
+		D53944CE2628363200DAC940 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D53944A12628100C00DAC940 /* ViewController.swift */,
+				D53944D12628367200DAC940 /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D53944CF2628364800DAC940 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D539449F2628100C00DAC940 /* SceneDelegate.swift */,
+				D53944D4262836A600DAC940 /* CheckPermission.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,9 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53944D5262836A600DAC940 /* CheckPermission.swift in Sources */,
 				D53944A22628100C00DAC940 /* ViewController.swift in Sources */,
 				D539449E2628100C00DAC940 /* AppDelegate.swift in Sources */,
 				D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */,
+				D53944D22628367200DAC940 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
