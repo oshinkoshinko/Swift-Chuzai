@@ -67,14 +67,6 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profman" translatesAutoresizingMaskIntoConstraints="NO" id="00p-g2-ysE">
-                                <rect key="frame" x="41" y="203" width="148" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profwoman" translatesAutoresizingMaskIntoConstraints="NO" id="MHF-ZH-1tF">
-                                <rect key="frame" x="201" y="203" width="148" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1C-1n-UUs">
                                 <rect key="frame" x="41" y="479" width="308" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,6 +85,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profman" translatesAutoresizingMaskIntoConstraints="NO" id="00p-g2-ysE">
+                                <rect key="frame" x="82" y="135" width="227" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kaP-pq-iRN" appends="YES" id="flU-D7-v87"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WxO-ca-KxR"/>
                         <color key="backgroundColor" red="0.58889570657696388" green="0.77220451260486367" blue="0.85350571065989844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -103,6 +103,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKi-PO-xBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kaP-pq-iRN"/>
             </objects>
             <point key="canvasLocation" x="1789.2307692307693" y="81.042654028436019"/>
         </scene>
@@ -270,7 +271,6 @@
     </scenes>
     <resources>
         <image name="profman" width="3873" height="3873"/>
-        <image name="profwoman" width="3873" height="3873"/>
         <image name="send" width="64" height="64"/>
         <image name="topimage" width="4000" height="6000"/>
         <systemColor name="systemBackgroundColor">
