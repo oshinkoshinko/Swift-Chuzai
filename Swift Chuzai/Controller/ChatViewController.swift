@@ -19,6 +19,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var roomName = String()
     var imageString = String()
     
+    //構造体Message型が入る配列
+    var messages:[Message] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +45,55 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.navigationItem.title = roomName
         
 
+    }
+    
+    //ロード　Firebaseの全メッセージ取得
+    func loadMessages(roomName:String){
+        
+        db.collection(roomName).order(by: "date").addSnapshotListener { (snapShot, error) in
+            
+            self.messages = []
+            
+            if error != nil{
+                
+                print(error.debugDescription)
+                return
+                
+            }
+            
+            //firebaseのsnapShotにはbody等入っている documentはその塊
+            if let snapShotDoc = snapShot?.documents{
+                
+                //for文
+                for doc in snapShotDoc{
+                    
+                    //doc.dataでbodyやdateが入る
+                    let data = doc.data()
+                    //必要なデータを取得
+                    if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String{
+                        
+                        //構造体Messageにセットでデータを格納
+                        let newMessage = Message(sender: sender, body: body, imageString: imageString)
+                        
+                        self.messages.append(newMessage)
+                        
+                        DispatchQueue.main.async {
+                            
+                            //TableViewにメッセージを取得
+                            self.tableView.reloadData()
+                            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                            //メッセージ送信後にそのメッセージが一番下に来るようにスクロール
+                            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
     }
     
 
