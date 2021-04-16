@@ -40,6 +40,9 @@
                                 <state key="normal" title="ログイン">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bli-s3-Xdg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHU-ZAI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sae-0Q-T0G">
                                 <rect key="frame" x="51" y="154" width="177" height="101"/>
@@ -66,10 +69,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="qJU-Y1-7rd"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="xUn-UN-dOI" id="ATy-R0-D4d"/>
+                        <outlet property="passwordTextField" destination="KX5-AC-af4" id="v76-p8-lTh"/>
+                        <segue destination="0rK-Wx-QaN" kind="show" identifier="chat" id="xK5-Nw-DrF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="81"/>
+            <point key="canvasLocation" x="925" y="191"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ZHf-Lr-Tva">
@@ -138,7 +146,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1789.2307692307693" y="81.042654028436019"/>
+            <point key="canvasLocation" x="1774" y="-223"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="QOD-62-b62">
@@ -339,7 +347,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="E9i-8T-Lfv"/>
+        <segue reference="xK5-Nw-DrF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backGround" width="3072" height="4608"/>
