@@ -121,7 +121,7 @@
         <!--Item 2-->
         <scene sceneID="QOD-62-b62">
             <objects>
-                <viewController id="FTe-a8-IIL" sceneMemberID="viewController">
+                <viewController id="FTe-a8-IIL" customClass="RoomViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzd-bS-7th">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,11 +131,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bFR-Jd-W53">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="102" id="bFR-Jd-W53">
+                                        <rect key="frame" x="0.0" y="28" width="390" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bFR-Jd-W53" id="raC-bU-Rl2">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -147,6 +147,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="lnJ-rf-IoR"/>
                     <connections>
+                        <outlet property="tableView" destination="Xz7-6m-Hgb" id="Ao6-yH-mEx"/>
                         <segue destination="3BE-xL-ujM" kind="show" id="CdP-5g-mqM"/>
                     </connections>
                 </viewController>
