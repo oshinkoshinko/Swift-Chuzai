@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="3441.5384615384614" y="445.73459715639808"/>
         </scene>
-        <!--News View Controller-->
+        <!--News-->
         <scene sceneID="mn6-Uv-WN4">
             <objects>
                 <viewController id="urL-aa-lV8" customClass="NewsViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,6 +217,7 @@
                         <viewLayoutGuide key="safeArea" id="jwh-Uz-HYQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="News" id="vfa-pW-kai"/>
                     <navigationItem key="navigationItem" id="hds-FE-pdE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n70-qJ-F6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -346,7 +347,7 @@
                     <connections>
                         <segue destination="hFJ-gS-xle" kind="relationship" relationship="viewControllers" id="Ox3-Hq-liX"/>
                         <segue destination="FTe-a8-IIL" kind="relationship" relationship="viewControllers" id="bjD-46-IMu"/>
-                        <segue destination="urL-aa-lV8" kind="show" id="ucP-Zv-6v0"/>
+                        <segue destination="urL-aa-lV8" kind="relationship" relationship="viewControllers" id="0cw-1M-iSS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbR-Ir-kTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

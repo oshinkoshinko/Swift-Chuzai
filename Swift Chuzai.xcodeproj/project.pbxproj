@@ -26,6 +26,7 @@
 		D53944F2262925DE00DAC940 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944F1262925DE00DAC940 /* RoomModel.swift */; };
 		D53944F8262943CD00DAC940 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944D12628367200DAC940 /* RegisterViewController.swift */; };
 		D53944FB262989E700DAC940 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944FA262989E600DAC940 /* NewsViewController.swift */; };
+		D53944FE2629C96700DAC940 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944FD2629C96600DAC940 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D53944EE262920FB00DAC940 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		D53944F1262925DE00DAC940 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		D53944FA262989E600DAC940 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		D53944FD2629C96600DAC940 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				D53944E3262872BB00DAC940 /* ChatViewController.swift */,
 				D53944EE262920FB00DAC940 /* RoomViewController.swift */,
 				D53944FA262989E600DAC940 /* NewsViewController.swift */,
+				D53944FD2629C96600DAC940 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				D53944EF262920FB00DAC940 /* RoomViewController.swift in Sources */,
 				D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */,
 				D53944F2262925DE00DAC940 /* RoomModel.swift in Sources */,
+				D53944FE2629C96700DAC940 /* WebViewController.swift in Sources */,
 				D53944E1262871F000DAC940 /* TabBarController.swift in Sources */,
 				D53944D92628495A00DAC940 /* SendToDBModel.swift in Sources */,
 			);
