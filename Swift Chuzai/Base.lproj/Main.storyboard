@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="191"/>
+            <point key="canvasLocation" x="963" y="80"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ZHf-Lr-Tva">
@@ -136,7 +136,6 @@
                         <outlet property="profileImageView" destination="00p-g2-ysE" id="vQw-dh-ArB"/>
                         <outlet property="userNameTextField" destination="MH4-Mc-6bR" id="UdT-DB-IIU"/>
                         <segue destination="0rK-Wx-QaN" kind="show" identifier="chat" id="J6C-cu-626"/>
-                        <segue destination="0rK-Wx-QaN" kind="show" id="E9i-8T-Lfv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKi-PO-xBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,9 +145,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1774" y="-223"/>
+            <point key="canvasLocation" x="1734" y="446"/>
         </scene>
-        <!--Item 2-->
+        <!--Room-->
         <scene sceneID="QOD-62-b62">
             <objects>
                 <viewController id="FTe-a8-IIL" customClass="RoomViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
@@ -188,7 +187,7 @@
                         <viewLayoutGuide key="safeArea" id="wSq-cZ-HlS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="lnJ-rf-IoR"/>
+                    <tabBarItem key="tabBarItem" title="Room" id="lnJ-rf-IoR"/>
                     <connections>
                         <outlet property="tableView" destination="Xz7-6m-Hgb" id="Ao6-yH-mEx"/>
                         <segue destination="3BE-xL-ujM" kind="show" identifier="roomChat" id="CdP-5g-mqM"/>
@@ -197,6 +196,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7e-PZ-pOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3441.5384615384614" y="445.73459715639808"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="mn6-Uv-WN4">
+            <objects>
+                <viewController id="urL-aa-lV8" customClass="NewsViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D7M-ee-5WQ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-pn-M65">
+                                <rect key="frame" x="316" y="100" width="58" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="urL-aa-lV8" eventType="touchUpInside" id="a0K-bu-zwj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jwh-Uz-HYQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hds-FE-pdE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n70-qJ-F6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2729" y="921"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="RxV-v3-T1o">
@@ -253,7 +278,7 @@
             </objects>
             <point key="canvasLocation" x="4170.7692307692305" y="445.73459715639808"/>
         </scene>
-        <!--Item 1-->
+        <!--All-->
         <scene sceneID="EEK-j8-Oec">
             <objects>
                 <viewController id="hFJ-gS-xle" customClass="ChatViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
@@ -298,7 +323,7 @@
                         <viewLayoutGuide key="safeArea" id="wnd-K0-61b"/>
                         <color key="backgroundColor" red="0.66253656149999995" green="0.91057431700000002" blue="0.64309632780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="6b6-4S-Sqd"/>
+                    <tabBarItem key="tabBarItem" title="All" id="6b6-4S-Sqd"/>
                     <connections>
                         <outlet property="messageTextField" destination="wHx-V5-wR4" id="XMc-SC-qfC"/>
                         <outlet property="tableView" destination="6xl-42-RtO" id="z53-oK-HLa"/>
@@ -321,6 +346,7 @@
                     <connections>
                         <segue destination="hFJ-gS-xle" kind="relationship" relationship="viewControllers" id="Ox3-Hq-liX"/>
                         <segue destination="FTe-a8-IIL" kind="relationship" relationship="viewControllers" id="bjD-46-IMu"/>
+                        <segue destination="urL-aa-lV8" kind="show" id="ucP-Zv-6v0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbR-Ir-kTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -347,10 +373,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xK5-Nw-DrF"/>
+        <segue reference="J6C-cu-626"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backGround" width="3072" height="4608"/>
+        <image name="logout" width="144" height="144"/>
         <image name="profman" width="3873" height="3873"/>
         <image name="send" width="64" height="64"/>
         <image name="topimage" width="4000" height="6000"/>
