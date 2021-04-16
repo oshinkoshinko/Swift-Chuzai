@@ -23,6 +23,7 @@
 		D53944E726287D4900DAC940 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E626287D4900DAC940 /* Message.swift */; };
 		D53944EB26288F8A00DAC940 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944E926288F8A00DAC940 /* MessageCell.swift */; };
 		D53944EC26288F8A00DAC940 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53944EA26288F8A00DAC940 /* MessageCell.xib */; };
+		D53944EF262920FB00DAC940 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944EE262920FB00DAC940 /* RoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D53944E626287D4900DAC940 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D53944E926288F8A00DAC940 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		D53944EA26288F8A00DAC940 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		D53944EE262920FB00DAC940 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				D53944D12628367200DAC940 /* RegisterViewController.swift */,
 				D53944E0262871F000DAC940 /* TabBarController.swift */,
 				D53944E3262872BB00DAC940 /* ChatViewController.swift */,
+				D53944EE262920FB00DAC940 /* RoomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				D53944E4262872BB00DAC940 /* ChatViewController.swift in Sources */,
 				D53944E726287D4900DAC940 /* Message.swift in Sources */,
 				D539449E2628100C00DAC940 /* AppDelegate.swift in Sources */,
+				D53944EF262920FB00DAC940 /* RoomViewController.swift in Sources */,
 				D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */,
 				D53944E1262871F000DAC940 /* TabBarController.swift in Sources */,
 				D53944D92628495A00DAC940 /* SendToDBModel.swift in Sources */,
