@@ -148,17 +148,17 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="lnJ-rf-IoR"/>
                     <connections>
                         <outlet property="tableView" destination="Xz7-6m-Hgb" id="Ao6-yH-mEx"/>
-                        <segue destination="3BE-xL-ujM" kind="show" id="CdP-5g-mqM"/>
+                        <segue destination="3BE-xL-ujM" kind="show" identifier="roomChat" id="CdP-5g-mqM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7e-PZ-pOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3441.5384615384614" y="445.73459715639808"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="RxV-v3-T1o">
             <objects>
-                <viewController id="3BE-xL-ujM" sceneMemberID="viewController">
+                <viewController id="3BE-xL-ujM" customClass="ChatViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="690-xK-pBL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

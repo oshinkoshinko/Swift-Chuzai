@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct RoomModel {
+    
+    var roomName = String()
+    var roomImageString = String()
+    
+    
+}

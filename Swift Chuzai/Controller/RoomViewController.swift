@@ -48,11 +48,39 @@ class RoomViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
     }
     
+    //セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
+        
+        cell.imageView?.image = UIImage(named: roomImageStringArray[indexPath.row])
+        cell.textLabel?.text = roomNameArray[indexPath.row]
+        
+        return cell
     }
-
+    
+    //セルの高さ
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 102
+        
+    }
+    
+    //セルがタップされた時
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "roomChat", sender: indexPath.row)
+        
+    }
+    
+    //didSelectRowAtでsenderに渡された値がsenderに入ってる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let roomChatVC = segue.destination as! ChatViewController
+        roomChatVC.roomName = roomNameArray[sender as! Int]
+        
+    }
+    
     /*
     // MARK: - Navigation
 
