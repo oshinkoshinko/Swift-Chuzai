@@ -53,9 +53,11 @@ class RoomViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
         
-        cell.imageView?.image = UIImage(named: roomImageStringArray[indexPath.row])
-        cell.imageView?.contentMode = .scaleAspectFill
-        cell.textLabel?.text = roomNameArray[indexPath.row]
+        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        imageView.image = UIImage(named: roomImageStringArray[indexPath.row])
+        
+        let label = cell.contentView.viewWithTag(2) as! UILabel
+        label.text = roomNameArray[indexPath.row]
         
         return cell
     }

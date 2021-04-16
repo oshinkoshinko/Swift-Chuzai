@@ -31,10 +31,10 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         //userimageにurlが入っていたら
-        if UserDefaults.standard.object(forKey: "userimage") != nil{
+        if UserDefaults.standard.object(forKey: "userImage") != nil{
             
-            //ImageStringにurlを文字列型で格納
-            imageString = UserDefaults.standard.object(forKey: "userimage") as! String
+            //imageStringにurlを文字列型で格納
+            imageString = UserDefaults.standard.object(forKey: "userImage") as! String
             
         }
         //ルーム名なし==全体チャット
@@ -137,8 +137,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.leftImageView.isHidden = false
             cell.rightImageView.isHidden = true
             //アイコンをセット
-            cell.leftImageView.sd_setImage(with: URL(string: imageString), completed: nil)
-            cell.rightImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
+            cell.rightImageView.sd_setImage(with: URL(string: imageString), completed: nil)
+            cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
             //セルの色分け
             cell.backView.backgroundColor = .orange
             cell.label.textColor = .white

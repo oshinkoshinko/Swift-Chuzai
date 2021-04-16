@@ -18,7 +18,7 @@ protocol SendProfileOKDelegate{
 class SendToDBModel {
     
     
-    var sendProfileDelegate:SendProfileOKDelegate?
+    var sendProfileOKDelegate:SendProfileOKDelegate?
     
     
     init(){
@@ -31,9 +31,10 @@ class SendToDBModel {
         
         //データ型で渡ってきた値をUIImage型に変換
         let image = UIImage(data: data)
-        //Jpegに圧縮
+        //Jpegに圧縮 データ型
         let profileImageData = image?.jpegData(compressionQuality: 0.1)
-        //ストレージサーバの保存先を決める "profileImage"がフォルダ名
+        
+        //ストレージサーバの保存先を決める "profileImage"がフォルダ名　"~.jpg"が保存命名形式
         let imageRef = Storage.storage().reference().child("profileImage").child("\(UUID().uuidString + String(Date().timeIntervalSince1970)).jpg")
         
          //渡ってきたデータをFirebasestorageに置く
@@ -52,10 +53,10 @@ class SendToDBModel {
                 return
                 
             }
-                //アプリ側にurlを保存
+                //アプリ側にキー値"userImage"としてurlを保存
                 UserDefaults.standard.setValue(url?.absoluteString, forKey: "userImage")
-            
-                self.sendProfileDelegate?.sendProfileOKDelegate(url: url!.absoluteString)
+                //委任先であるRegisterVCへ
+                self.sendProfileOKDelegate?.sendProfileOKDelegate(url: url!.absoluteString)
             
             }
         

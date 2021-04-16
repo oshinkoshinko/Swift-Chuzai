@@ -28,7 +28,8 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         //カメラ許可画面を出す
         let checkModel = CheckPermission()
         checkModel.showCheckPermission()
-        sendToDBModel.sendProfileDelegate = self
+        
+        sendToDBModel.sendProfileOKDelegate = self
         
         userNameTextField.delegate = self
         emailTextField.delegate = self
