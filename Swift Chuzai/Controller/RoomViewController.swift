@@ -13,7 +13,7 @@ class RoomViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     var roomNameArray = ["🇺🇸アメリカ","🇨🇳中国","🇦🇺オーストラリア","🇹🇭タイ","🇨🇦カナダ","🇬🇧イギリス","🇧🇷ブラジル","🇩🇪ドイツ","🇫🇷フランス"]
     
-    var roomImageStringArray = ["0","1","2","3","4","5","6","7","8","9",]
+    var roomImageStringArray = ["0","1","2","3","4","5","6","7","8","9"]
     
     @IBOutlet weak var tableView: UITableView!
     

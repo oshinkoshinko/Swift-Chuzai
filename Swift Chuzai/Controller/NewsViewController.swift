@@ -18,6 +18,7 @@ class NewsViewController: SegementSlideDefaultViewController{
         
     }
     
+    //ヘッダー形式
     override func segementSlideHeaderView() -> UIView {
 
         let headerView = UIImageView()
@@ -34,11 +35,11 @@ class NewsViewController: SegementSlideDefaultViewController{
 
         if #available(iOS 11.0, *) {
 
-        headerHeight = view.bounds.height/4+view.safeAreaInsets.top
+        headerHeight = view.bounds.height/5+view.safeAreaInsets.top
 
         } else {
 
-        headerHeight = view.bounds.height/4+topLayoutGuide.length
+        headerHeight = view.bounds.height/5+topLayoutGuide.length
 
         }
 
@@ -50,8 +51,7 @@ class NewsViewController: SegementSlideDefaultViewController{
         
         override var titlesInSwitcher: [String] {
 
-        //コンテンツを表示するコントローラが6つ必要
-        return ["Japan","","Yahoo","IT","Buzz","CNN"]
+        return ["World","JPN","USA","CHN","AUS","THA","CAN","UK","BRA","GER","FRA"]
 
         }
         
@@ -84,7 +84,27 @@ class NewsViewController: SegementSlideDefaultViewController{
         case 5:
 
         return Page6TableViewController()
+            
+        case 6:
 
+        return Page7TableViewController()
+            
+        case 7:
+
+        return Page8TableViewController()
+            
+        case 8:
+
+        return Page9TableViewController()
+            
+        case 9:
+
+        return Page10TableViewController()
+            
+        case 10:
+
+        return Page11TableViewController()
+            
         default:
 
         return Page1TableViewController()
@@ -106,9 +126,9 @@ class NewsViewController: SegementSlideDefaultViewController{
         }
 
     //ログアウト
-    @IBAction func logout(_ sender: Any) {
-        
-    }
+//    @IBAction func logout(_ sender: Any) {
+//
+//    }
     /*
     // MARK: - Navigation
 
@@ -119,4 +139,4 @@ class NewsViewController: SegementSlideDefaultViewController{
     }
     */
 
-}
+

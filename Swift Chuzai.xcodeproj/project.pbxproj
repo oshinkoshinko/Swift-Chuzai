@@ -27,6 +27,18 @@
 		D53944F8262943CD00DAC940 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944D12628367200DAC940 /* RegisterViewController.swift */; };
 		D53944FB262989E700DAC940 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944FA262989E600DAC940 /* NewsViewController.swift */; };
 		D53944FE2629C96700DAC940 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53944FD2629C96600DAC940 /* WebViewController.swift */; };
+		D53945012629CB6900DAC940 /* Page1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945002629CB6900DAC940 /* Page1TableViewController.swift */; };
+		D53945042629CC1800DAC940 /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945032629CC1800DAC940 /* NewsItems.swift */; };
+		D53945072629CFC300DAC940 /* Page2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945062629CFC300DAC940 /* Page2TableViewController.swift */; };
+		D539450A2629D01E00DAC940 /* Page3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945092629D01E00DAC940 /* Page3TableViewController.swift */; };
+		D539450D2629D04100DAC940 /* Page4TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539450C2629D04100DAC940 /* Page4TableViewController.swift */; };
+		D53945102629D07600DAC940 /* Page5TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539450F2629D07600DAC940 /* Page5TableViewController.swift */; };
+		D53945132629D0A300DAC940 /* Page6TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945122629D0A300DAC940 /* Page6TableViewController.swift */; };
+		D53945162629D0BF00DAC940 /* Page7TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945152629D0BF00DAC940 /* Page7TableViewController.swift */; };
+		D53945192629D0E600DAC940 /* Page8TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945182629D0E600DAC940 /* Page8TableViewController.swift */; };
+		D539451C2629D0F400DAC940 /* Page9TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451B2629D0F400DAC940 /* Page9TableViewController.swift */; };
+		D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451E2629D12400DAC940 /* Page10TableViewController.swift */; };
+		D53945222629DD0E00DAC940 /* Page11TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945212629DD0E00DAC940 /* Page11TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +66,18 @@
 		D53944F1262925DE00DAC940 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		D53944FA262989E600DAC940 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D53944FD2629C96600DAC940 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D53945002629CB6900DAC940 /* Page1TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1TableViewController.swift; sourceTree = "<group>"; };
+		D53945032629CC1800DAC940 /* NewsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
+		D53945062629CFC300DAC940 /* Page2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2TableViewController.swift; sourceTree = "<group>"; };
+		D53945092629D01E00DAC940 /* Page3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3TableViewController.swift; sourceTree = "<group>"; };
+		D539450C2629D04100DAC940 /* Page4TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4TableViewController.swift; sourceTree = "<group>"; };
+		D539450F2629D07600DAC940 /* Page5TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5TableViewController.swift; sourceTree = "<group>"; };
+		D53945122629D0A300DAC940 /* Page6TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6TableViewController.swift; sourceTree = "<group>"; };
+		D53945152629D0BF00DAC940 /* Page7TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page7TableViewController.swift; sourceTree = "<group>"; };
+		D53945182629D0E600DAC940 /* Page8TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page8TableViewController.swift; sourceTree = "<group>"; };
+		D539451B2629D0F400DAC940 /* Page9TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page9TableViewController.swift; sourceTree = "<group>"; };
+		D539451E2629D12400DAC940 /* Page10TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10TableViewController.swift; sourceTree = "<group>"; };
+		D53945212629DD0E00DAC940 /* Page11TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page11TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +155,17 @@
 				D53944EE262920FB00DAC940 /* RoomViewController.swift */,
 				D53944FA262989E600DAC940 /* NewsViewController.swift */,
 				D53944FD2629C96600DAC940 /* WebViewController.swift */,
+				D53945002629CB6900DAC940 /* Page1TableViewController.swift */,
+				D53945062629CFC300DAC940 /* Page2TableViewController.swift */,
+				D53945092629D01E00DAC940 /* Page3TableViewController.swift */,
+				D539450C2629D04100DAC940 /* Page4TableViewController.swift */,
+				D539450F2629D07600DAC940 /* Page5TableViewController.swift */,
+				D53945122629D0A300DAC940 /* Page6TableViewController.swift */,
+				D53945152629D0BF00DAC940 /* Page7TableViewController.swift */,
+				D53945182629D0E600DAC940 /* Page8TableViewController.swift */,
+				D539451B2629D0F400DAC940 /* Page9TableViewController.swift */,
+				D539451E2629D12400DAC940 /* Page10TableViewController.swift */,
+				D53945212629DD0E00DAC940 /* Page11TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -142,6 +177,7 @@
 				D53944D82628495A00DAC940 /* SendToDBModel.swift */,
 				D53944E626287D4900DAC940 /* Message.swift */,
 				D53944F1262925DE00DAC940 /* RoomModel.swift */,
+				D53945032629CC1800DAC940 /* NewsItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,18 +300,30 @@
 			files = (
 				D53944D5262836A600DAC940 /* CheckPermission.swift in Sources */,
 				D53944EB26288F8A00DAC940 /* MessageCell.swift in Sources */,
+				D53945222629DD0E00DAC940 /* Page11TableViewController.swift in Sources */,
+				D53945132629D0A300DAC940 /* Page6TableViewController.swift in Sources */,
+				D53945102629D07600DAC940 /* Page5TableViewController.swift in Sources */,
+				D539450A2629D01E00DAC940 /* Page3TableViewController.swift in Sources */,
 				D53944A22628100C00DAC940 /* ViewController.swift in Sources */,
 				D53944F8262943CD00DAC940 /* RegisterViewController.swift in Sources */,
 				D53944E4262872BB00DAC940 /* ChatViewController.swift in Sources */,
 				D53944E726287D4900DAC940 /* Message.swift in Sources */,
 				D53944FB262989E700DAC940 /* NewsViewController.swift in Sources */,
 				D539449E2628100C00DAC940 /* AppDelegate.swift in Sources */,
+				D53945072629CFC300DAC940 /* Page2TableViewController.swift in Sources */,
 				D53944EF262920FB00DAC940 /* RoomViewController.swift in Sources */,
+				D53945042629CC1800DAC940 /* NewsItems.swift in Sources */,
+				D539451C2629D0F400DAC940 /* Page9TableViewController.swift in Sources */,
+				D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */,
 				D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */,
+				D539450D2629D04100DAC940 /* Page4TableViewController.swift in Sources */,
+				D53945162629D0BF00DAC940 /* Page7TableViewController.swift in Sources */,
 				D53944F2262925DE00DAC940 /* RoomModel.swift in Sources */,
 				D53944FE2629C96700DAC940 /* WebViewController.swift in Sources */,
 				D53944E1262871F000DAC940 /* TabBarController.swift in Sources */,
 				D53944D92628495A00DAC940 /* SendToDBModel.swift in Sources */,
+				D53945012629CB6900DAC940 /* Page1TableViewController.swift in Sources */,
+				D53945192629D0E600DAC940 /* Page8TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
