@@ -141,8 +141,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
             //セルの色分け
             cell.backView.backgroundColor = .orange
-            cell.label.textColor = .white
-            
+            cell.label.textColor = .white            
             
         }
         
