@@ -125,10 +125,6 @@ class NewsViewController: SegementSlideDefaultViewController{
 
         }
 
-    //ログアウト
-//    @IBAction func logout(_ sender: Any) {
-//
-//    }
     /*
     // MARK: - Navigation
 

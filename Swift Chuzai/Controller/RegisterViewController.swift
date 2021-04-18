@@ -65,6 +65,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 //UIImageをデータ型へ
                 let data = image.jpegData(compressionQuality: 1.0)
                 
+                
                 //登録したプロフ写真をFirebaseStorageへ送信
                 self.sendToDBModel.sendProfileImageData(data: data!)
                 
