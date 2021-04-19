@@ -20,6 +20,8 @@ class RoomViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = true

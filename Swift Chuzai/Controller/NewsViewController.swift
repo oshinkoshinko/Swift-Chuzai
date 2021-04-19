@@ -13,6 +13,8 @@ class NewsViewController: SegementSlideDefaultViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         reloadData()
         defaultSelectedIndex = 0
         

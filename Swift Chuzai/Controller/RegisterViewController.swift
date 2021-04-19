@@ -25,6 +25,8 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         //カメラ許可画面を出す
         let checkModel = CheckPermission()
         checkModel.showCheckPermission()
