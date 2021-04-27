@@ -11,9 +11,40 @@ import FirebaseFirestore
 
 class MypageViewController: UIViewController {
 
+    var imageString = String()
+    
+    @IBOutlet weak var profile: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var introductionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        //userimageにurlが入っていたら
+        if UserDefaults.standard.object(forKey: "userImage") != nil{
+            
+            //imageStringにurlを文字列型で格納
+            imageString = UserDefaults.standard.object(forKey: "userImage") as! String
+            
+        }
+        
+        //ユーザ情報取得
+        let user = Auth.auth().currentUser
+        if let user = user {
+
+            let name = user.displayName
+            userNameLabel.text = name
+            let email = user.email
+            emailLabel.text = email
+            
+            
+        }
+   
+        
+        
         // Do any additional setup after loading the view.
     }
     

@@ -281,7 +281,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="アカウント名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVo-Ms-j8g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザー名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVo-Ms-j8g">
                                 <rect key="frame" x="75" y="287" width="240" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -360,6 +360,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="MyPage" id="Asq-pm-JjU"/>
                     <navigationItem key="navigationItem" id="3My-lO-tNt"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="Nb2-Bt-1gg" id="rNF-cZ-wMc"/>
+                        <outlet property="introductionLabel" destination="Sh4-W9-XVq" id="fUQ-Vh-wkE"/>
+                        <outlet property="phoneNumberLabel" destination="Yoe-Lg-jfH" id="QrU-ej-07O"/>
+                        <outlet property="profile" destination="tco-kj-Usd" id="FiP-fK-CAz"/>
+                        <outlet property="userNameLabel" destination="pGD-eh-BKF" id="reT-Qs-3NF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAs-ik-gpW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

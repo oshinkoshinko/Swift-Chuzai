@@ -41,6 +41,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
