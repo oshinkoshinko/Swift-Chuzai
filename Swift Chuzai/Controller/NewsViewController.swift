@@ -20,6 +20,13 @@ class NewsViewController: SegementSlideDefaultViewController{
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
+    
     //ヘッダー形式
     override func segementSlideHeaderView() -> UIView {
 
@@ -37,7 +44,7 @@ class NewsViewController: SegementSlideDefaultViewController{
 
         if #available(iOS 11.0, *) {
 
-        headerHeight = view.bounds.height/5+view.safeAreaInsets.top
+        headerHeight = view.bounds.height/4+view.safeAreaInsets.top
 
         } else {
 

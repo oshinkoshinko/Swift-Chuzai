@@ -1,15 +1,15 @@
 //
-//  ChatViewController.swift
+//  AllChatViewController.swift
 //  Swift Chuzai
 //
-//  Created by 岡真也 on 2021/04/15.
+//  Created by 岡真也 on 2021/04/27.
 //
 
 import UIKit
 import Firebase
 import SDWebImage
 
-class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -54,7 +54,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         
     }
     
@@ -150,7 +150,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageString), completed: nil)
             //セルの色分け
             cell.backView.backgroundColor = .orange
-            cell.label.textColor = .white            
+            cell.label.textColor = .white
             
         }
         
