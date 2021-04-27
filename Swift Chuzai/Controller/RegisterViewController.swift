@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
 class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegate,UITextFieldDelegate {
 
@@ -20,6 +21,10 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     var sendToDBModel = SendToDBModel()
     var urlString = String()
+    
+    //ユーザデータ保存用
+    let db = Firestore.firestore()
+    var idString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +42,26 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.object(forKey: "documentID") != nil{
+            //キー値がdocumentIDのデータをisStringに格納
+            idString = UserDefaults.standard.object(forKey: "documentID") as! String
+            
+        }else{
+            
+            
+            idString = db.collection("User").document().path
+            print(idString) //Answers/djaijsdia(<-documentID) Answersが入っている
+            idString = String(idString.dropFirst(8)) //最初の8文字(Answers/)をdropして削除
+            //documentIDをキー値としてidStringを保存
+            UserDefaults.standard.setValue(idString, forKey: "documentID")
+            
+        }
+        
+        
+    }
+    
     //入力後にキーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -47,6 +72,12 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     
     @IBAction func register(_ sender: Any) {
+        
+        db.collection("User").document(idString).setData(
+        
+            ["email":emailTextField.text as Any,"registerDate":Date().timeIntervalSince1970]
+        
+        )
         
         //各TextFieldが空でないか
         if emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
