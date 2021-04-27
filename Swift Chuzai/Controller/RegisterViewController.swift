@@ -14,7 +14,6 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     
     
-    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -33,7 +32,6 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         
         sendToDBModel.sendProfileOKDelegate = self
         
-        userNameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -42,7 +40,6 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     //入力後にキーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        userNameTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         
@@ -52,7 +49,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBAction func register(_ sender: Any) {
         
         //各TextFieldが空でないか
-        if userNameTextField.text?.isEmpty != true && emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
+        if emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
             
             //FirebaseのAuthentificationに入る
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
@@ -95,7 +92,6 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBAction func tapImageView(_ sender: Any) {
         
         //カメラかアルバムから写真を選択
-        
         //アラートを出す
         showAlert()
     }
