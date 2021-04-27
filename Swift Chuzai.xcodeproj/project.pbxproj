@@ -39,6 +39,7 @@
 		D539451C2629D0F400DAC940 /* Page9TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451B2629D0F400DAC940 /* Page9TableViewController.swift */; };
 		D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451E2629D12400DAC940 /* Page10TableViewController.swift */; };
 		D53945222629DD0E00DAC940 /* Page11TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945212629DD0E00DAC940 /* Page11TableViewController.swift */; };
+		D5A7CFE32638134900EA8A19 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE22638134900EA8A19 /* MypageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		D539451B2629D0F400DAC940 /* Page9TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page9TableViewController.swift; sourceTree = "<group>"; };
 		D539451E2629D12400DAC940 /* Page10TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10TableViewController.swift; sourceTree = "<group>"; };
 		D53945212629DD0E00DAC940 /* Page11TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page11TableViewController.swift; sourceTree = "<group>"; };
+		D5A7CFE22638134900EA8A19 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				D539451B2629D0F400DAC940 /* Page9TableViewController.swift */,
 				D539451E2629D12400DAC940 /* Page10TableViewController.swift */,
 				D53945212629DD0E00DAC940 /* Page11TableViewController.swift */,
+				D5A7CFE22638134900EA8A19 /* MypageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				D539451C2629D0F400DAC940 /* Page9TableViewController.swift in Sources */,
 				D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */,
 				D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */,
+				D5A7CFE32638134900EA8A19 /* MypageViewController.swift in Sources */,
 				D539450D2629D04100DAC940 /* Page4TableViewController.swift in Sources */,
 				D53945162629D0BF00DAC940 /* Page7TableViewController.swift in Sources */,
 				D53944F2262925DE00DAC940 /* RoomModel.swift in Sources */,
