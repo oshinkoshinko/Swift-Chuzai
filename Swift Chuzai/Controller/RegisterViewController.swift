@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     var sendToDBModel = SendToDBModel()
     var urlString = String()
+    var imageString = String()
     
     //ユーザデータ保存用
     let db = Firestore.firestore()
@@ -81,11 +82,11 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
             
             db.collection("User").document(idString).setData(
             
-                ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"registerDate":Date().timeIntervalSince1970])
+                ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
             
         }else{
             
-            db.collection("User").addDocument(data:  ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"registerDate":Date().timeIntervalSince1970])
+            db.collection("User").addDocument(data: ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
             
         }
         

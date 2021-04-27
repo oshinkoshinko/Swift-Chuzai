@@ -13,6 +13,9 @@ class MypageViewController: UIViewController {
 
     var imageString = String()
     
+    //構造体Profile型が入る配列
+    var profileArray:[Profile] = []
+    
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
