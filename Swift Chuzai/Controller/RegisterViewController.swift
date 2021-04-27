@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     
     
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -44,16 +45,17 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     override func viewWillAppear(_ animated: Bool) {
         
+        //ユーザデータ保存用
         if UserDefaults.standard.object(forKey: "documentID") != nil{
-            //キー値がdocumentIDのデータをisStringに格納
+            //キー値がdocumentIDのデータをidStringに格納
             idString = UserDefaults.standard.object(forKey: "documentID") as! String
             
         }else{
             
-            
+            //最初はUserコレクションにdocumentなし
             idString = db.collection("User").document().path
-            print(idString) //Answers/djaijsdia(<-documentID) Answersが入っている
-            idString = String(idString.dropFirst(8)) //最初の8文字(Answers/)をdropして削除
+            print(idString) //Answers/djaijsdia(<-documentID) Userが入っている
+            idString = String(idString.dropFirst(5)) //最初の5文字(User/)をdropして削除
             //documentIDをキー値としてidStringを保存
             UserDefaults.standard.setValue(idString, forKey: "documentID")
             
@@ -73,14 +75,26 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     @IBAction func register(_ sender: Any) {
         
-        db.collection("User").document(idString).setData(
+        //ユーザデータ用コレクション作成
+        if db.collection("User").document(idString) == nil{
+            
+            db.collection("User").document(idString).setData(
+            
+                ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"registerDate":Date().timeIntervalSince1970])
+            
+        }else{
+            
+            db.collection("User").addDocument(data:  ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"registerDate":Date().timeIntervalSince1970])
+            
+        }
         
-            ["email":emailTextField.text as Any,"registerDate":Date().timeIntervalSince1970]
         
-        )
+
+        
+        
         
         //各TextFieldが空でないか
-        if emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
+        if userNameTextField.text?.isEmpty != true && emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
             
             //FirebaseのAuthentificationに入る
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
