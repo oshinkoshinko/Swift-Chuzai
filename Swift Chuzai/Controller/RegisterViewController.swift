@@ -13,8 +13,7 @@ import FirebaseFirestore
 class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegate,UITextFieldDelegate {
 
     
-    
-    
+
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -86,7 +85,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 
                 ref = db.collection("User").document(userID)
                 
-                ref?.setData(["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"imageString":"", "registerDate":Date().timeIntervalSince1970])
+                ref?.setData(["userName":userNameTextField.text as Any,"introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"imageString":"", "registerDate":Date().timeIntervalSince1970])
                 { err in if let err = err{
                     print("Error adding document: \(err)")
                 } else {

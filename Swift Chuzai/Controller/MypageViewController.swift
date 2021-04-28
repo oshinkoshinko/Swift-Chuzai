@@ -25,6 +25,18 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+   
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
         //ユーザ情報取得
         let user = Auth.auth().currentUser
         if let user = user {
@@ -52,16 +64,6 @@ class MypageViewController: UIViewController {
             
             
         }
-   
-        
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.isNavigationBarHidden = true
         
     }
     
