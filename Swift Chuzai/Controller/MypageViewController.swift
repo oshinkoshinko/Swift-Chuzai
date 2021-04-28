@@ -81,7 +81,7 @@ class MypageViewController: UIViewController {
     
     @IBAction func edit(_ sender: Any) {
         
-        
+        self.performSegue(withIdentifier: "userEdit", sender: nil)
         
     }
     

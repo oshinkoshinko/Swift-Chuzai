@@ -370,7 +370,7 @@
                         <outlet property="profile" destination="tco-kj-Usd" id="FiP-fK-CAz"/>
                         <outlet property="profileImage" destination="tco-kj-Usd" id="SBp-Ov-H8g"/>
                         <outlet property="userNameLabel" destination="pGD-eh-BKF" id="reT-Qs-3NF"/>
-                        <segue destination="6rA-JT-oZK" kind="show" id="lDd-9I-GFq"/>
+                        <segue destination="6rA-JT-oZK" kind="show" identifier="userEdit" id="lDd-9I-GFq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAs-ik-gpW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
