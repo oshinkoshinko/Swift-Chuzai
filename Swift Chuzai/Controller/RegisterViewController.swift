@@ -79,14 +79,6 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     @IBAction func register(_ sender: Any) {
         
-
-
-        
-        
-
-        
-        
-        
         //各TextFieldが空でないか
         if userNameTextField.text?.isEmpty != true && emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
             
@@ -122,38 +114,9 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                     print("Document added with ID: \(ref!.documentID)")
                 }}
                 
-//                if let userID = user?.uid {
-//
-//                    print(userID)
-//
-//                    if db.collection("User").document(userID) == nil{
-//
-//                        db.collection("User").document(userID).setData(
-//
-//                            ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
-//
-//                    }else{
-//
-//                        db.collection("User").addDocument(data: ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
-//
-//                    }
-//
-//                }else{
-//
-//                    print("登録できませんでした。")
-//
-//                }
-                
             }
-
-            
             
         }
-        
-        //登録
-        
-
-
         
     }
     

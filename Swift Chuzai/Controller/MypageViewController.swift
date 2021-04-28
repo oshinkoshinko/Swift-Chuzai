@@ -41,11 +41,17 @@ class MypageViewController: UIViewController {
         if let user = user {
 
             let userID = user.uid
-            let ref = db.collection("User").document("userID")
+            let ref = db.collection("User").document(userID)
 
-            ref.getDocument{ (document, error) in
+            ref.getDocument{ [self] (document, error) in
                 if let document = document {
-                    print("Tea=Darjeeling : Document data \(document.data())")
+                    let data = document.data()
+                    let name = data!["userName"]
+                    self.userNameLabel.text = name as! String
+                    let number = data!["phoneNumber"]
+                    self.phoneNumberLabel.text = number as! String
+                    let introduction = data!["introduction"]
+                    self.introductionLabel.text = introduction as! String
                 }else{
                     print("Document does not exist")
                 }
