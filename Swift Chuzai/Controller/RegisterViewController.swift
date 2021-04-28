@@ -47,27 +47,6 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-//        //ユーザデータ保存用
-//        if UserDefaults.standard.object(forKey: "userID") != nil{
-//            //キー値がdocumentIDのデータをidStringに格納
-//            idString = UserDefaults.standard.object(forKey: "userID") as! String
-//
-//        }else{
-//
-//            //最初はUserコレクションにdocumentなし
-//            idString = db.collection("User").document().path
-//            print(idString) //Answers/djaijsdia(<-documentID) Userが入っている
-//            idString = String(idString.dropFirst(5)) //最初の5文字(User/)をdropして削除
-//            //documentIDをキー値としてidStringを保存
-//            UserDefaults.standard.setValue(idString, forKey: "documentID")
-//
-//        }
-        
-        
-    }
-    
     //入力後にキーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -107,7 +86,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 
                 ref = db.collection("User").document(userID)
                 
-                ref?.setData(["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"registerDate":Date().timeIntervalSince1970])
+                ref?.setData(["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"imageString":"", "registerDate":Date().timeIntervalSince1970])
                 { err in if let err = err{
                     print("Error adding document: \(err)")
                 } else {
@@ -123,6 +102,20 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     func sendProfileOKDelegate(url: String) {
         
         urlString = url
+        
+        //プロフ画像Userコレクションに追加
+        let user = Auth.auth().currentUser
+        guard let userID = user?.uid else { fatalError() }
+        let ref = db.collection("User").document(userID)
+        
+        ref.updateData(["imageString":urlString as Any])
+        { err in if let err = err{
+            print("Error adding document: \(err)")
+        } else {
+            print("Document added with ID: \(ref.documentID)")
+        }}
+        
+        
         //firebasestoreからurlが返ってきているか
         if urlString.isEmpty != true{
             //画面遷移

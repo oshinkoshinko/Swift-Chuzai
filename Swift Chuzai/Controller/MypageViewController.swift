@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import SDWebImage
 
 class MypageViewController: UIViewController {
 
@@ -21,6 +22,7 @@ class MypageViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var introductionLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
     let db = Firestore.firestore()
     
@@ -52,6 +54,8 @@ class MypageViewController: UIViewController {
                     self.phoneNumberLabel.text = number as! String
                     let introduction = data!["introduction"]
                     self.introductionLabel.text = introduction as! String
+                    let imageString = data!["imageString"]
+                    self.profileImage.sd_setImage(with: URL(string: imageString as! String), completed: nil)
                 }else{
                     print("Document does not exist")
                 }
