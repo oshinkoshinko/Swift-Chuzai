@@ -22,6 +22,8 @@ class MypageViewController: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var introductionLabel: UILabel!
     
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,8 +40,16 @@ class MypageViewController: UIViewController {
         let user = Auth.auth().currentUser
         if let user = user {
 
-            let name = user.displayName
-            userNameLabel.text = name
+            let userID = user.uid
+            let ref = db.collection("User").document("userID")
+
+            ref.getDocument{ (document, error) in
+                if let document = document {
+                    print("Tea=Darjeeling : Document data \(document.data())")
+                }else{
+                    print("Document does not exist")
+                }
+            }
             let email = user.email
             emailLabel.text = email
             

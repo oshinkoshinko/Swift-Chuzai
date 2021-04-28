@@ -28,6 +28,8 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     let db = Firestore.firestore()
     var idString = String()
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,21 +49,21 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     override func viewWillAppear(_ animated: Bool) {
         
-        //ユーザデータ保存用
-        if UserDefaults.standard.object(forKey: "documentID") != nil{
-            //キー値がdocumentIDのデータをidStringに格納
-            idString = UserDefaults.standard.object(forKey: "documentID") as! String
-            
-        }else{
-            
-            //最初はUserコレクションにdocumentなし
-            idString = db.collection("User").document().path
-            print(idString) //Answers/djaijsdia(<-documentID) Userが入っている
-            idString = String(idString.dropFirst(5)) //最初の5文字(User/)をdropして削除
-            //documentIDをキー値としてidStringを保存
-            UserDefaults.standard.setValue(idString, forKey: "documentID")
-            
-        }
+//        //ユーザデータ保存用
+//        if UserDefaults.standard.object(forKey: "userID") != nil{
+//            //キー値がdocumentIDのデータをidStringに格納
+//            idString = UserDefaults.standard.object(forKey: "userID") as! String
+//
+//        }else{
+//
+//            //最初はUserコレクションにdocumentなし
+//            idString = db.collection("User").document().path
+//            print(idString) //Answers/djaijsdia(<-documentID) Userが入っている
+//            idString = String(idString.dropFirst(5)) //最初の5文字(User/)をdropして削除
+//            //documentIDをキー値としてidStringを保存
+//            UserDefaults.standard.setValue(idString, forKey: "documentID")
+//
+//        }
         
         
     }
@@ -77,18 +79,8 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     @IBAction func register(_ sender: Any) {
         
-        //ユーザデータ用コレクション作成
-        if db.collection("User").document(idString) == nil{
-            
-            db.collection("User").document(idString).setData(
-            
-                ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
-            
-        }else{
-            
-            db.collection("User").addDocument(data: ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
-            
-        }
+
+
         
         
 
@@ -99,7 +91,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         if userNameTextField.text?.isEmpty != true && emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
             
             //FirebaseのAuthentificationに入る
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { [self] (result, error) in
                 
                 if error != nil{
                     
@@ -114,13 +106,54 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 
                 //登録したプロフ写真をFirebaseStorageへ送信
                 self.sendToDBModel.sendProfileImageData(data: data!)
+             
+                let user = Auth.auth().currentUser
+                //ユーザデータ用コレクション作成
+                var ref: DocumentReference? = nil
+                //userIDにuidを代入
+                guard let userID = user?.uid else { fatalError() }
+                
+                ref = db.collection("User").document(userID)
+                
+                ref?.setData(["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"registerDate":Date().timeIntervalSince1970])
+                { err in if let err = err{
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }}
+                
+//                if let userID = user?.uid {
+//
+//                    print(userID)
+//
+//                    if db.collection("User").document(userID) == nil{
+//
+//                        db.collection("User").document(userID).setData(
+//
+//                            ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
+//
+//                    }else{
+//
+//                        db.collection("User").addDocument(data: ["userName":userNameTextField.text as Any,"email":emailTextField.text as Any,"imageString":"","introduction":"","phoneNumber":"" ,"registerDate":Date().timeIntervalSince1970])
+//
+//                    }
+//
+//                }else{
+//
+//                    print("登録できませんでした。")
+//
+//                }
                 
             }
+
             
             
         }
         
         //登録
+        
+
+
         
     }
     
