@@ -73,6 +73,14 @@ class MypageViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         
     }
+    
+    
+    @IBAction func edit(_ sender: Any) {
+        
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 

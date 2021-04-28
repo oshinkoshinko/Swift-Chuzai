@@ -39,6 +39,7 @@
 		D539451C2629D0F400DAC940 /* Page9TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451B2629D0F400DAC940 /* Page9TableViewController.swift */; };
 		D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451E2629D12400DAC940 /* Page10TableViewController.swift */; };
 		D53945222629DD0E00DAC940 /* Page11TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945212629DD0E00DAC940 /* Page11TableViewController.swift */; };
+		D598A9B0263970E300264EB2 /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9AF263970E300264EB2 /* UserEditViewController.swift */; };
 		D5A7CFE32638134900EA8A19 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE22638134900EA8A19 /* MypageViewController.swift */; };
 		D5A7CFE626381AEA00EA8A19 /* AllChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */; };
 		D5A7CFE92638454000EA8A19 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE82638454000EA8A19 /* Profile.swift */; };
@@ -81,6 +82,7 @@
 		D539451B2629D0F400DAC940 /* Page9TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page9TableViewController.swift; sourceTree = "<group>"; };
 		D539451E2629D12400DAC940 /* Page10TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10TableViewController.swift; sourceTree = "<group>"; };
 		D53945212629DD0E00DAC940 /* Page11TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page11TableViewController.swift; sourceTree = "<group>"; };
+		D598A9AF263970E300264EB2 /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE22638134900EA8A19 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChatViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE82638454000EA8A19 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				D53945212629DD0E00DAC940 /* Page11TableViewController.swift */,
 				D5A7CFE22638134900EA8A19 /* MypageViewController.swift */,
 				D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */,
+				D598A9AF263970E300264EB2 /* UserEditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				D53944FB262989E700DAC940 /* NewsViewController.swift in Sources */,
 				D539449E2628100C00DAC940 /* AppDelegate.swift in Sources */,
 				D53945072629CFC300DAC940 /* Page2TableViewController.swift in Sources */,
+				D598A9B0263970E300264EB2 /* UserEditViewController.swift in Sources */,
 				D53944EF262920FB00DAC940 /* RoomViewController.swift in Sources */,
 				D53945042629CC1800DAC940 /* NewsItems.swift in Sources */,
 				D539451C2629D0F400DAC940 /* Page9TableViewController.swift in Sources */,

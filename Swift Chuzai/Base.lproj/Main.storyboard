@@ -349,6 +349,9 @@
                                 <state key="normal" title="編集">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="edit:" destination="72c-OP-bjj" eventType="touchUpInside" id="tHM-mP-hiF"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tco-kj-Usd">
                                 <rect key="frame" x="75" y="56" width="240" height="214"/>
@@ -366,11 +369,28 @@
                         <outlet property="phoneNumberLabel" destination="Yoe-Lg-jfH" id="QrU-ej-07O"/>
                         <outlet property="profile" destination="tco-kj-Usd" id="FiP-fK-CAz"/>
                         <outlet property="userNameLabel" destination="pGD-eh-BKF" id="reT-Qs-3NF"/>
+                        <segue destination="6rA-JT-oZK" kind="show" id="lDd-9I-GFq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAs-ik-gpW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2656.9230769230767" y="-754.26540284360181"/>
+            <point key="canvasLocation" x="2605" y="-778"/>
+        </scene>
+        <!--User Edit View Controller-->
+        <scene sceneID="Xrb-06-HzO">
+            <objects>
+                <viewController id="6rA-JT-oZK" customClass="UserEditViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iee-gk-miq">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pqD-Nv-IH6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PDN-gM-dWT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNs-3Y-m0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3423" y="-947"/>
         </scene>
         <!--All Users-->
         <scene sceneID="EEK-j8-Oec">
