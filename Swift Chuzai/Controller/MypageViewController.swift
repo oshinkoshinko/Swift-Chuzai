@@ -12,10 +12,6 @@ import SDWebImage
 
 class MypageViewController: UIViewController {
 
-    var imageString = String()
-    
-    //構造体Profile型が入る配列
-    var profileArray:[Profile] = []
     
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -28,15 +24,6 @@ class MypageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        //userimageにurlが入っていたら
-        if UserDefaults.standard.object(forKey: "userImage") != nil{
-            
-            //imageStringにurlを文字列型で格納
-            imageString = UserDefaults.standard.object(forKey: "userImage") as! String
-            
-        }
         
         //ユーザ情報取得
         let user = Auth.auth().currentUser
