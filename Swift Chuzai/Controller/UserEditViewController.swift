@@ -11,11 +11,13 @@ import FirebaseAuth
 import FirebaseFirestore
 import SDWebImage
 
-class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,UITextFieldDelegate, UITextViewDelegate {
+class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate,SendProfileOKDelegate {
 
 
     let db = Firestore.firestore()
     
+    var sendToDBModel = SendToDBModel()
+    var urlString = String()
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!
@@ -30,6 +32,8 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
         emailTextField.delegate = self
         numberTextField.delegate = self
         introductionTextField.delegate = self
+        
+        sendToDBModel.sendProfileOKDelegate = self
         
         //ユーザ情報取得
         let user = Auth.auth().currentUser
@@ -90,6 +94,13 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     @IBAction func update(_ sender: Any) {
         
+        let image = profileImage.image
+        //UIImageをデータ型へ
+        let data = image!.jpegData(compressionQuality: 1.0)
+        //登録したプロフ写真をFirebaseStorageへ送信
+        self.sendToDBModel.sendProfileImageData(data: data!)
+        
+        
         let user = Auth.auth().currentUser
         guard let userID = user?.uid else { fatalError() }
         let ref = db.collection("User").document(userID)
@@ -110,11 +121,128 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
         })
         
         //前画面へ遷移
-        self.navigationController?.popViewController(animated: true)
+        if urlString.isEmpty != true{
+
+            self.navigationController?.popViewController(animated: true)
+
+            
+        }
         
     }
     
     
+    func sendProfileOKDelegate(url: String) {
+            
+        urlString = url
+        
+        //プロフ画像Userコレクションに追加
+        let user = Auth.auth().currentUser
+        guard let userID = user?.uid else { fatalError() }
+        let ref = db.collection("User").document(userID)
+        
+        ref.updateData(["imageString":urlString as Any])
+        { err in if let err = err{
+            print("Error adding document: \(err)")
+        } else {
+            print("Document added with ID: \(ref.documentID)")
+        }}
+        
+    }
+    
+    
+    //プロフ写真
+    @IBAction func tapImageView(_ sender: Any) {
+        
+        //カメラかアルバムから写真を選択
+        //アラートを出す
+        showAlert()
+    }
+    
+    //カメラ立ち上げメソッド
+    func doCamera(){
+        
+        let sourceType:UIImagePickerController.SourceType = .camera
+        
+        //カメラ利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.allowsEditing = true
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+            
+        }
+        
+    }
+    
+    //アルバム
+    func doAlbum(){
+        
+        let sourceType:UIImagePickerController.SourceType = .photoLibrary
+        
+        //カメラ利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.allowsEditing = true
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+            
+        }
+        
+    }
+    
+    //選択された写真
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        if info[.originalImage] as? UIImage != nil{
+            
+            let selectedImage = info[.originalImage] as! UIImage
+            profileImage.image = selectedImage
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+        
+    }
+    
+    //キャンセルボタン
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    //アラート
+    func showAlert(){
+        
+        let alertController = UIAlertController(title: "選択", message: "どちらを使用しますか?", preferredStyle: .actionSheet)
+        
+        let action1 = UIAlertAction(title: "カメラ", style: .default) { (alert) in
+            
+            self.doCamera()
+            
+        }
+        let action2 = UIAlertAction(title: "アルバム", style: .default) { (alert) in
+            
+            self.doAlbum()
+            
+        }
+        
+        let action3 = UIAlertAction(title: "キャンセル", style: .cancel)
+        
+        
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(action3)
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     
     /*
     // MARK: - Navigation
