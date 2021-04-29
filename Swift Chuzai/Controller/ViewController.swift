@@ -41,16 +41,5 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func logout(_ sender: Any) {
-        
-        do {
-            try Auth.auth().signOut()
-            print("ログアウトしました。")
-        } catch let error {
-            print("ログアウトできませんでした。")
-        }
-        
-    }
-    
 }
 

@@ -244,6 +244,7 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
         
     }
     
+    
     /*
     // MARK: - Navigation
 
