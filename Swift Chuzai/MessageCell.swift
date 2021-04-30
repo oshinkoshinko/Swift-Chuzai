@@ -17,6 +17,9 @@ class MessageCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     //ロードされたときに表示
     override func awakeFromNib() {
         super.awakeFromNib()

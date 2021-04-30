@@ -40,6 +40,7 @@
 		D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451E2629D12400DAC940 /* Page10TableViewController.swift */; };
 		D53945222629DD0E00DAC940 /* Page11TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945212629DD0E00DAC940 /* Page11TableViewController.swift */; };
 		D598A9B0263970E300264EB2 /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9AF263970E300264EB2 /* UserEditViewController.swift */; };
+		D598A9B3263BE75200264EB2 /* EachUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9B2263BE75200264EB2 /* EachUserViewController.swift */; };
 		D5A7CFE32638134900EA8A19 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE22638134900EA8A19 /* MypageViewController.swift */; };
 		D5A7CFE626381AEA00EA8A19 /* AllChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */; };
 		D5A7CFE92638454000EA8A19 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE82638454000EA8A19 /* Profile.swift */; };
@@ -83,6 +84,7 @@
 		D539451E2629D12400DAC940 /* Page10TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10TableViewController.swift; sourceTree = "<group>"; };
 		D53945212629DD0E00DAC940 /* Page11TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page11TableViewController.swift; sourceTree = "<group>"; };
 		D598A9AF263970E300264EB2 /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
+		D598A9B2263BE75200264EB2 /* EachUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachUserViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE22638134900EA8A19 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChatViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE82638454000EA8A19 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				D5A7CFE22638134900EA8A19 /* MypageViewController.swift */,
 				D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */,
 				D598A9AF263970E300264EB2 /* UserEditViewController.swift */,
+				D598A9B2263BE75200264EB2 /* EachUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				D53945102629D07600DAC940 /* Page5TableViewController.swift in Sources */,
 				D539450A2629D01E00DAC940 /* Page3TableViewController.swift in Sources */,
 				D5A7CFE626381AEA00EA8A19 /* AllChatViewController.swift in Sources */,
+				D598A9B3263BE75200264EB2 /* EachUserViewController.swift in Sources */,
 				D53944A22628100C00DAC940 /* ViewController.swift in Sources */,
 				D53944F8262943CD00DAC940 /* RegisterViewController.swift in Sources */,
 				D53944E4262872BB00DAC940 /* ChatViewController.swift in Sources */,

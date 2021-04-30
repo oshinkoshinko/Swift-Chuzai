@@ -82,11 +82,12 @@ class RoomViewController: UIViewController,UITableViewDataSource,UITableViewDele
     //セルがタップされた時
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //performSegueで遷移先のVCインスタンスを取得 performSegue()は内部でprepare()をコールする
         performSegue(withIdentifier: "roomChat", sender: indexPath.row)
         
     }
     
-    //didSelectRowAtでsenderに渡された値がsenderに入ってる
+    //didSelectRowAtでsenderに渡された値がsenderに入ってる //Segue実行前処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let roomChatVC = segue.destination as! ChatViewController

@@ -60,6 +60,13 @@
                             </imageView>
                         </subviews>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLx-oR-Akw">
+                        <rect key="frame" x="349" y="10" width="50" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGray2Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="214-or-qRp" secondAttribute="trailing" constant="16" id="DlI-dj-pCM"/>
@@ -74,14 +81,18 @@
                 <outlet property="backView" destination="7g8-OT-Zbg" id="2qx-sa-HVW"/>
                 <outlet property="label" destination="QbT-dJ-Mfa" id="SfO-mt-evo"/>
                 <outlet property="leftImageView" destination="Uhs-WP-XzM" id="7pb-6e-pT8"/>
+                <outlet property="nameLabel" destination="WLx-oR-Akw" id="RLb-Y9-qeH"/>
                 <outlet property="rightImageView" destination="rSo-D9-RPK" id="ccm-pG-unr"/>
             </connections>
-            <point key="canvasLocation" x="-651" y="-27"/>
+            <point key="canvasLocation" x="-651.44927536231887" y="-27.120535714285712"/>
         </tableViewCell>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
