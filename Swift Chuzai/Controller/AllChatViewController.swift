@@ -19,6 +19,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var roomName = String()
     var imageString = String()
     
+    var imageURL = String()
+    
     //構造体Message型が入る配列
     var messages:[Message] = []
     
@@ -185,19 +187,27 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
     }
     
-    //セルがタップされた時
+    //セルがタップされた時の処理 didSelectRowAt indexPath.rowでセルの行番号取得
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //performSegueで遷移先のVCインスタンスを取得 performSegue()は内部でprepare()をコールする
-        performSegue(withIdentifier: "roomChat", sender: indexPath.row)
+        imageURL = messages[indexPath.row].imageString
+        
+        //セルの選択解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //performSegueで遷移先のVCインスタンスを取得し遷移 performSegue()は内部でprepare()をコールする
+        performSegue(withIdentifier: "eachUserVC", sender: nil)
         
     }
     
     //didSelectRowAtでsenderに渡された値がsenderに入ってる //Segue実行前処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let roomChatVC = segue.destination as! ChatViewController
-        roomChatVC.roomName = roomNameArray[sender as! Int]
+
+            
+            let eachUserVC = (segue.destination as? EachUserViewController)!
+            
+            eachUserVC.imageUrl = imageURL
+            
         
     }
     

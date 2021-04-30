@@ -12,5 +12,6 @@ struct Message {
     let sender:String
     let body:String
     let imageString:String
+//    let name:String
     
 }
