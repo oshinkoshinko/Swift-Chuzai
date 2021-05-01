@@ -23,7 +23,18 @@ class AnimationViewController: UIViewController, UIScrollViewDelegate {
         scrollView.isPagingEnabled = true
         setUpScroll()
         
-        
+        for i in 0...4{
+            
+            let animationView = AnimationView()
+            let animation = Animation.named(onboardArray[i])
+            animationView.frame = CGRect(x: CGFloat(i) * view.frame.size.width, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+            animationView.animation = animation
+            animationView.contentMode = .scaleAspectFit
+            animationView.loopMode = .loop
+            animationView.play()
+            scrollView.addSubview(animationView)
+            
+        }
         // Do any additional setup after loading the view.
     }
     
