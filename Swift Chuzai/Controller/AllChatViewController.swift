@@ -18,6 +18,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     var roomName = String()
     var imageString = String()
+    //ログインユーザのプロフ渡す用
+//    var loginImageString = String()
     
     var imageURL = String()
     
@@ -39,6 +41,24 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             //imageStringにurlを文字列型で格納
             imageString = UserDefaults.standard.object(forKey: "userImage") as! String
+            
+            let user = Auth.auth().currentUser
+            let userID = user!.uid
+            let ref = db.collection("User").document(userID)
+            
+            ref.getDocument{ [self] (document, error) in
+                if let document = document {
+                    let data = document.data()
+                    let loginImageString = data!["imageString"]
+                    
+                    if loginImageString as! String != imageString{
+                        
+                        imageString = loginImageString as! String
+                        
+                    }
+                    
+                }
+            }
             
         }
         //ルーム名なし==全体チャット
@@ -63,7 +83,7 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
     //ロード　Firebaseの全メッセージ取得
     func loadMessages(roomName:String){
         
-        db.collection(roomName).order(by: "date").addSnapshotListener { (snapShot, error) in
+        db.collection(roomName).order(by: "date").addSnapshotListener { [self] (snapShot, error) in
             
             self.messages = []
             
@@ -84,6 +104,25 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     let data = doc.data()
                     //必要なデータを取得
                     if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String{
+                        
+                        
+                        let user = Auth.auth().currentUser
+                        let userID = user!.uid
+                        let ref = db.collection("User").document(userID)
+                        
+                        ref.getDocument{ [self] (document, error) in
+                            if let document = document {
+                                let data = document.data()
+                                let loginImageString = data!["imageString"]
+                                
+                                if loginImageString as! String != imageString{
+                                    
+                                    self.imageString = loginImageString as! String
+                                    
+                                }
+                                
+                            }
+                        }
                         
                         //構造体Messageにセットでデータを格納
                         let newMessage = Message(sender: sender, body: body, imageString: imageString)
@@ -195,22 +234,28 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         //セルの選択解除
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //performSegueで遷移先のVCインスタンスを取得し遷移 performSegue()は内部でprepare()をコールする
-        performSegue(withIdentifier: "eachUserVC", sender: nil)
+        //performSegueで遷移先のVCインスタンスを取得し遷移するver. performSegue()は内部でprepare()をコールする
+        //performSegue(withIdentifier: "eachUserVC", sender: nil)
+        
+        
+        let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
+        eachUserVC.imageUrl = imageURL
+        
+        navigationController?.pushViewController(eachUserVC, animated: true)
         
     }
     
-    //didSelectRowAtでsenderに渡された値がsenderに入ってる //Segue実行前処理
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-            
-            let eachUserVC = (segue.destination as? EachUserViewController)!
-            
-            eachUserVC.imageUrl = imageURL
-            
-        
-    }
-    
+    //performSegue使うver didSelectRowAtでsenderに渡された値がsenderに入ってる //Segue実行前処理
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//
+//            let eachUserVC = (segue.destination as? EachUserViewController)!
+//
+//            eachUserVC.imageUrl = imageURL
+//
+//
+//    }
+//
     
     
     

@@ -255,11 +255,12 @@
                     <connections>
                         <outlet property="messageTextField" destination="CnK-fq-3Xy" id="Wtc-6q-JkG"/>
                         <outlet property="tableView" destination="buf-9O-oyy" id="6B7-HC-9Yg"/>
+                        <segue destination="6Yw-yf-t3i" kind="show" identifier="eachUserVC" id="7Ho-Fg-jJL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwL-TB-3MN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4170.7692307692305" y="445.73459715639808"/>
+            <point key="canvasLocation" x="4171" y="446"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="LJN-fg-ky3">
@@ -546,7 +547,7 @@
         <!--Each User View Controller-->
         <scene sceneID="YwF-lY-U1u">
             <objects>
-                <viewController id="6Yw-yf-t3i" customClass="EachUserViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eachUserVC" id="6Yw-yf-t3i" customClass="EachUserViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UUj-xw-PQj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -658,6 +659,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="J6C-cu-626"/>
+        <segue reference="7Ho-Fg-jJL"/>
         <segue reference="Kij-zP-O3q"/>
     </inferredMetricsTieBreakers>
     <resources>

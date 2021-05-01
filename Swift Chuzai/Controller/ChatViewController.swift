@@ -18,6 +18,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var roomName = String()
     var imageString = String()
+    var imageURL = String()
     
     //構造体Message型が入る配列
     var messages:[Message] = []
@@ -37,6 +38,24 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             
             //imageStringにurlを文字列型で格納
             imageString = UserDefaults.standard.object(forKey: "userImage") as! String
+            
+            let user = Auth.auth().currentUser
+            let userID = user!.uid
+            let ref = db.collection("User").document(userID)
+            
+            ref.getDocument{ [self] (document, error) in
+                if let document = document {
+                    let data = document.data()
+                    let loginImageString = data!["imageString"]
+                    
+                    if loginImageString as! String != imageString{
+                        
+                        imageString = loginImageString as! String
+                        
+                    }
+                    
+                }
+            }
             
         }
         //ルーム名なし==全体チャット
@@ -185,8 +204,24 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    
-    
+    //セルがタップされた時の処理 didSelectRowAt indexPath.rowでセルの行番号取得
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        imageURL = messages[indexPath.row].imageString
+        
+        //セルの選択解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //performSegueで遷移先のVCインスタンスを取得し遷移するver. performSegue()は内部でprepare()をコールする
+        //performSegue(withIdentifier: "eachUserVC", sender: nil)
+        
+        
+        let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
+        eachUserVC.imageUrl = imageURL
+        
+        navigationController?.pushViewController(eachUserVC, animated: true)
+        
+    }
     
     
     /*
