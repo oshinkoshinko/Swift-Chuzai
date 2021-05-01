@@ -242,9 +242,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
         eachUserVC.imageUrl = imageURL
-        
         navigationController?.pushViewController(eachUserVC, animated: true)
-        
+
     }
     
     

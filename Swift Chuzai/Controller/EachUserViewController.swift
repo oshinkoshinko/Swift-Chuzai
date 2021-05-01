@@ -38,7 +38,7 @@ class EachUserViewController: UIViewController {
 
         self.navigationController?.isNavigationBarHidden = false
         loadUser()
-
+        
     }
     
     //ロード　Firebaseの全メッセージ取得
@@ -49,6 +49,7 @@ class EachUserViewController: UIViewController {
         
         print("イメージurl")
         print(imageUrl)
+        
         
         thisUserRef.getDocuments { [self] (querySnapshot, error) in
             
@@ -71,6 +72,8 @@ class EachUserViewController: UIViewController {
                 print(data)
                 print(data["userName"] as? String)
                 
+
+                    
                 }
             }
             
