@@ -54,6 +54,7 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bli-s3-Xdg"/>
+                                    <segue destination="89g-n7-0OC" kind="show" id="1fv-Jm-AwC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,17 +75,41 @@
         <!--Animation View Controller-->
         <scene sceneID="FGp-cg-rku">
             <objects>
-                <viewController id="89g-n7-0OC" customClass="AnimationViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="animationVC" id="89g-n7-0OC" customClass="AnimationViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OIy-X6-Ffm">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-rr-ZQC">
+                                <rect key="frame" x="0.0" y="-40" width="390" height="830"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Fyu-jc-9LJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="u0S-0e-Ohn"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13c-lV-tub">
+                                <rect key="frame" x="154" y="580" width="81" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96376591919999999" green="0.90250509980000004" blue="0.87842679020000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="SKIP">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ybe-0k-oFc" kind="show" id="IqL-Am-2pY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OBn-15-cGB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1bq-5O-VAG"/>
+                    <connections>
+                        <outlet property="scrollView" destination="OO7-rr-ZQC" id="bfC-GU-ff6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pkf-ha-jMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="761"/>
+            <point key="canvasLocation" x="961.53846153846155" y="760.66350710900474"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ZHf-Lr-Tva">
@@ -681,8 +706,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J6C-cu-626"/>
+        <segue reference="xK5-Nw-DrF"/>
         <segue reference="UHJ-Ex-8Mc"/>
+        <segue reference="IqL-Am-2pY"/>
         <segue reference="Kij-zP-O3q"/>
     </inferredMetricsTieBreakers>
     <resources>
