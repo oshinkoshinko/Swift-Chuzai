@@ -71,6 +71,21 @@
             </objects>
             <point key="canvasLocation" x="963" y="80"/>
         </scene>
+        <!--Animation View Controller-->
+        <scene sceneID="FGp-cg-rku">
+            <objects>
+                <viewController id="89g-n7-0OC" customClass="AnimationViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OIy-X6-Ffm">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OBn-15-cGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pkf-ha-jMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="761"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="ZHf-Lr-Tva">
             <objects>
