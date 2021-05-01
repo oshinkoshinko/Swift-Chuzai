@@ -39,34 +39,6 @@ class EachUserViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         loadUser()
 
-//        //ユーザ情報取得
-//        let user = Auth.auth().currentUser
-//        if let user = user {
-//
-//            let userID = user.uid
-//            let ref = db.collection("User").document(userID)
-//
-//            ref.getDocument{ [self] (document, error) in
-//                if let document = document {
-//                    let data = document.data()
-//                    let name = data!["userName"]
-//                    self.userNameLabel.text = name as! String
-//                    let number = data!["phoneNumber"]
-//                    self.phoneNumberLabel.text = number as! String
-//                    let introduction = data!["introduction"]
-//                    self.introductionLabel.text = introduction as! String
-//                    let imageString = data!["imageString"]
-//                    self.profile.sd_setImage(with: URL(string: imageString as! String), completed: nil)
-//                }else{
-//                    print("Document does not exist")
-//                }
-//            }
-//            let email = user.email
-//            emailLabel.text = email
-//
-//
-//        }
-//
     }
     
     //ロード　Firebaseの全メッセージ取得
@@ -101,13 +73,18 @@ class EachUserViewController: UIViewController {
                 
                 }
             }
-//            let datas = _snapshot!.documents.compactMap { $0.data() }
-//            print(datas)
             
         }
         
-            
     }
+    
+    //電話発信
+    @IBAction func call(_ sender: Any) {
+        print(phoneNumberLabel.text)
+        UIApplication.shared.open(URL(string: "tel://\(phoneNumberLabel.text)")!, options: [:], completionHandler: nil)
+        
+    }
+    
     
     /*
     // MARK: - Navigation

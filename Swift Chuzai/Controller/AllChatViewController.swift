@@ -238,12 +238,15 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         //performSegue(withIdentifier: "eachUserVC", sender: nil)
         
         
+        
+        
         let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
         eachUserVC.imageUrl = imageURL
         
         navigationController?.pushViewController(eachUserVC, animated: true)
         
     }
+    
     
     //performSegue使うver didSelectRowAtでsenderに渡された値がsenderに入ってる //Segue実行前処理
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -378,7 +378,7 @@
         <!--User Edit View Controller-->
         <scene sceneID="Xrb-06-HzO">
             <objects>
-                <viewController id="6rA-JT-oZK" customClass="UserEditViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userEditVC" id="6rA-JT-oZK" customClass="UserEditViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iee-gk-miq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -601,6 +601,14 @@
                                 <rect key="frame" x="76" y="116" width="240" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrZ-SJ-a4k">
+                                <rect key="frame" x="225" y="636" width="92" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="call"/>
+                                <connections>
+                                    <action selector="call:" destination="6Yw-yf-t3i" eventType="touchUpInside" id="Cb9-n1-LHg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vE9-II-6XO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -615,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdd-aV-Dvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4171" y="-223"/>
+            <point key="canvasLocation" x="4170.7692307692305" y="-223.22274881516586"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3rb-Km-RKo">
@@ -659,11 +667,12 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="J6C-cu-626"/>
-        <segue reference="7Ho-Fg-jJL"/>
+        <segue reference="UHJ-Ex-8Mc"/>
         <segue reference="Kij-zP-O3q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backGround" width="3072" height="4608"/>
+        <image name="call" width="256" height="256"/>
         <image name="profman" width="3873" height="3873"/>
         <image name="send" width="64" height="64"/>
         <image name="topimage" width="522" height="1040"/>
