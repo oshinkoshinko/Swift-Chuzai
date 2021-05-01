@@ -60,6 +60,7 @@ class AnimationViewController: UIViewController, UIScrollViewDelegate {
             onboardLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
             onboardLabel.textAlignment = .center
             onboardLabel.text = onboardStringArray[i]
+            onboardLabel.numberOfLines = 2
             scrollView.addSubview(onboardLabel)
             
             
