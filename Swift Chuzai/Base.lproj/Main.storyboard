@@ -29,7 +29,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ybe-0k-oFc" kind="show" id="fd2-NO-l8F"/>
+                                    <segue destination="89g-n7-0OC" kind="show" id="eVL-40-yd8"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-AC-af4">
@@ -54,7 +54,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bli-s3-Xdg"/>
-                                    <segue destination="89g-n7-0OC" kind="show" id="1fv-Jm-AwC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -708,7 +707,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="xK5-Nw-DrF"/>
         <segue reference="UHJ-Ex-8Mc"/>
-        <segue reference="IqL-Am-2pY"/>
         <segue reference="Kij-zP-O3q"/>
     </inferredMetricsTieBreakers>
     <resources>

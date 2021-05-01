@@ -42,6 +42,11 @@
 		D598A9B0263970E300264EB2 /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9AF263970E300264EB2 /* UserEditViewController.swift */; };
 		D598A9B3263BE75200264EB2 /* EachUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9B2263BE75200264EB2 /* EachUserViewController.swift */; };
 		D598A9B6263D563500264EB2 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9B5263D563500264EB2 /* AnimationViewController.swift */; };
+		D598A9D6263D682900264EB2 /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = D598A9D1263D682300264EB2 /* 3.json */; };
+		D598A9D7263D682A00264EB2 /* 5.json in Resources */ = {isa = PBXBuildFile; fileRef = D598A9D2263D682500264EB2 /* 5.json */; };
+		D598A9D8263D682A00264EB2 /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = D598A9D3263D682600264EB2 /* 2.json */; };
+		D598A9D9263D682A00264EB2 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = D598A9D4263D682700264EB2 /* 1.json */; };
+		D598A9DA263D682A00264EB2 /* 4.json in Resources */ = {isa = PBXBuildFile; fileRef = D598A9D5263D682900264EB2 /* 4.json */; };
 		D5A7CFE32638134900EA8A19 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE22638134900EA8A19 /* MypageViewController.swift */; };
 		D5A7CFE626381AEA00EA8A19 /* AllChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */; };
 		D5A7CFE92638454000EA8A19 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A7CFE82638454000EA8A19 /* Profile.swift */; };
@@ -87,6 +92,11 @@
 		D598A9AF263970E300264EB2 /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		D598A9B2263BE75200264EB2 /* EachUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachUserViewController.swift; sourceTree = "<group>"; };
 		D598A9B5263D563500264EB2 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		D598A9D1263D682300264EB2 /* 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
+		D598A9D2263D682500264EB2 /* 5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 5.json; sourceTree = "<group>"; };
+		D598A9D3263D682600264EB2 /* 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2.json; sourceTree = "<group>"; };
+		D598A9D4263D682700264EB2 /* 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1.json; sourceTree = "<group>"; };
+		D598A9D5263D682900264EB2 /* 4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 4.json; sourceTree = "<group>"; };
 		D5A7CFE22638134900EA8A19 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE526381AEA00EA8A19 /* AllChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChatViewController.swift; sourceTree = "<group>"; };
 		D5A7CFE82638454000EA8A19 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -153,6 +163,11 @@
 				D53944A82628101000DAC940 /* LaunchScreen.storyboard */,
 				D53944AB2628101000DAC940 /* Info.plist */,
 				D53944CB2628345500DAC940 /* GoogleService-Info.plist */,
+				D598A9D4263D682700264EB2 /* 1.json */,
+				D598A9D3263D682600264EB2 /* 2.json */,
+				D598A9D1263D682300264EB2 /* 3.json */,
+				D598A9D5263D682900264EB2 /* 4.json */,
+				D598A9D2263D682500264EB2 /* 5.json */,
 			);
 			path = "Swift Chuzai";
 			sourceTree = "<group>";
@@ -259,10 +274,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D598A9DA263D682A00264EB2 /* 4.json in Resources */,
+				D598A9D8263D682A00264EB2 /* 2.json in Resources */,
 				D53944EC26288F8A00DAC940 /* MessageCell.xib in Resources */,
+				D598A9D7263D682A00264EB2 /* 5.json in Resources */,
 				D53944AA2628101000DAC940 /* LaunchScreen.storyboard in Resources */,
 				D53944A72628101000DAC940 /* Assets.xcassets in Resources */,
+				D598A9D6263D682900264EB2 /* 3.json in Resources */,
 				D53944A52628100C00DAC940 /* Main.storyboard in Resources */,
+				D598A9D9263D682A00264EB2 /* 1.json in Resources */,
 				D53944CC2628345500DAC940 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
