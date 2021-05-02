@@ -240,15 +240,12 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let message = messages[indexPath.row]
         let body = message.body
         let documentID = message.documentID
-        print("構造体のid")
+        print("構造体に格納したdocumentID")
         print(documentID)
         
         
         let messageRef = db.collection(roomName)
-        let thisMessageRef = messageRef.whereField("body", isEqualTo: body)
-        
-        print("削除データ")
-        print(thisMessageRef)
+        let thisMessageRef = messageRef.whereField("documentID", isEqualTo: documentID)
         
         thisMessageRef.getDocuments { [self] (querySnapshot, error) in
             
@@ -283,6 +280,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 
             }
             
+            //messagesの配列からも削除 => セルの数とデータの数を合わせる
+            messages.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             completionHolder(true)
             
