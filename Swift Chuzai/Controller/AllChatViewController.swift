@@ -265,12 +265,11 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         //指定セルのdocumentIDを取得
         print(indexPath.row)
         let message = messages[indexPath.row]
-        let body = message.body
         let documentID = message.documentID
         print("構造体に格納したdocumentId")
         print(documentID)
-                
-        
+        print(message.sender)
+            
         let messageRef = db.collection(roomName)
         let thisMessageRef = messageRef.whereField("documentID", isEqualTo: documentID)
         
@@ -291,6 +290,7 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 }
             }
         }
+        
         
         //削除アクション時の処理
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { [self]
@@ -315,18 +315,26 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
         })
         
-        //ボタンの見た目
-        let deleteImage = UIImage(systemName: "trash.fill")?.withTintColor(UIColor.lightGray, renderingMode: .alwaysOriginal)
-        deleteAction.image = deleteImage
-        deleteAction.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        let user = Auth.auth().currentUser
         
-        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
-//        swipeAction.performsFirstActionWithFullSwipe = false
+        if message.sender == user?.email{
+            //ボタンの見た目
+            let deleteImage = UIImage(systemName: "trash.fill")?.withTintColor(UIColor.lightGray, renderingMode: .alwaysOriginal)
+            deleteAction.image = deleteImage
+            deleteAction.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+            
+            let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
+    //        swipeAction.performsFirstActionWithFullSwipe = false
+            
+    //        self.tableView.reloadData()
+            
+            return swipeAction
+            
+        } else {
+            
+            return nil
         
-//        self.tableView.reloadData()
-        
-        return swipeAction
-        
+        }
     }
     
     //performSegue使うver didSelectRowAtでsenderに渡された値がsenderに入ってる //Segue実行前処理

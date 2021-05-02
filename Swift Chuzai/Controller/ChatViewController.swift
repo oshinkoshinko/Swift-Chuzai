@@ -287,17 +287,26 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             
         })
         
-        //ボタンの見た目
-        let deleteImage = UIImage(systemName: "trash.fill")?.withTintColor(UIColor.lightGray, renderingMode: .alwaysOriginal)
-        deleteAction.image = deleteImage
-        deleteAction.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        let user = Auth.auth().currentUser
+
+        if message.sender == user?.email{
+            //ボタンの見た目
+            let deleteImage = UIImage(systemName: "trash.fill")?.withTintColor(UIColor.lightGray, renderingMode: .alwaysOriginal)
+            deleteAction.image = deleteImage
+            deleteAction.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+            
+            let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
+    //        swipeAction.performsFirstActionWithFullSwipe = false
+            
+    //        self.tableView.reloadData()
+            
+            return swipeAction
+            
+        }else{
+            
+            return nil
         
-        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
-//        swipeAction.performsFirstActionWithFullSwipe = false
-        
-//        self.tableView.reloadData()
-        
-        return swipeAction
+        }
         
     }
     
