@@ -23,6 +23,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     //構造体Message型が入る配列
     var messages:[Message] = []
     
+    var documentID = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,10 +102,10 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     //doc.dataでbodyやdateが入る
                     let data = doc.data()
                     //必要なデータを取得
-                    if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String{
+                    if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String, let documentID = data["documentID"] as? String{
                         
                         //構造体Messageにセットでデータを格納
-                        let newMessage = Message(sender: sender, body: body, imageString: imageString)
+                        let newMessage = Message(sender: sender, body: body, imageString: imageString, documentID: documentID)
                         
                         self.messages.append(newMessage)
                         
@@ -181,13 +183,20 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         if let messageBody = messageTextField.text,let sender = Auth.auth().currentUser?.email{
             
-            //Firebase内のデータを辞書型で取得
-            db.collection(roomName).addDocument(data: ["sender":sender,"body":messageBody,"imageString":imageString,"date":Date().timeIntervalSince1970]) { (error) in
+            //Firebase内のデータを辞書型で追加
+            var ref: DocumentReference? = nil
+
+            ref = db.collection(roomName).addDocument(data: ["sender":sender,"body":messageBody,"imageString":imageString,"date":Date().timeIntervalSince1970,"documentID":""]) { (error) in
                 
                 if error != nil{
                     
                     print(error.debugDescription)
                     return
+                    
+                } else {
+                    
+                    //documentIDをfirestoreに格納
+                    ref!.updateData(["sender":sender,"body":messageBody,"imageString":self.imageString,"date":Date().timeIntervalSince1970,"documentID":ref?.documentID])
                     
                 }
                 
@@ -222,6 +231,77 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         navigationController?.pushViewController(eachUserVC, animated: true)
         
     }
+    
+    //メッセージ削除アクション
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //指定セルのdocumentIDを取得
+        print(indexPath.row)
+        let message = messages[indexPath.row]
+        let body = message.body
+        let documentID = message.documentID
+        print("構造体のid")
+        print(documentID)
+        
+        
+        let messageRef = db.collection(roomName)
+        let thisMessageRef = messageRef.whereField("body", isEqualTo: body)
+        
+        print("削除データ")
+        print(thisMessageRef)
+        
+        thisMessageRef.getDocuments { [self] (querySnapshot, error) in
+            
+            if error != nil {
+                
+                print("エラーです")
+                return
+                
+            }else{
+                        
+                    for document in querySnapshot!.documents {
+                        print("削除id")
+                        print(document.documentID)
+                        self.documentID = document.documentID
+                        
+                }
+            }
+        }
+        
+        //削除アクション時の処理
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete", handler: { [self]
+            action, sourceView, completionHolder in
+            
+            //firestoreから削除
+            db.collection(roomName).document(documentID).delete() { err in
+                
+                if let err = err {
+                    print("削除できませんでした")
+                } else {
+                    print("削除できました")
+                }
+                
+            }
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHolder(true)
+            
+        })
+        
+        //ボタンの見た目
+        let deleteImage = UIImage(systemName: "trash.fill")?.withTintColor(UIColor.lightGray, renderingMode: .alwaysOriginal)
+        deleteAction.image = deleteImage
+        deleteAction.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
+//        swipeAction.performsFirstActionWithFullSwipe = false
+        
+//        self.tableView.reloadData()
+        
+        return swipeAction
+        
+    }
+    
     
     
     /*

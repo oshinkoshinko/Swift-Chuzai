@@ -41,7 +41,6 @@ class EachUserViewController: UIViewController {
         
     }
     
-    //ロード　Firebaseの全メッセージ取得
     func loadUser(){
         
         let userRef = db.collection("User")
