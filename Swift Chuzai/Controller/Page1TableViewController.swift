@@ -37,8 +37,10 @@ class Page1TableViewController: UITableViewController, SegementSlideContentScrol
         let urlString = "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml"
         //文字列をURL型にキャスト
         let url:URL = URL(string: urlString)!
+        //XMLParserDelegateはappleが用意している
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
+        //parseを開始
         parser.parse()
         
     }
@@ -80,6 +82,7 @@ class Page1TableViewController: UITableViewController, SegementSlideContentScrol
         
         let newsItem = self.newsItems[indexPath.row]
         
+        //セルのテキストの見た目
         cell.textLabel?.text = newsItem.title
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
         cell.textLabel?.textColor = .white
@@ -92,28 +95,32 @@ class Page1TableViewController: UITableViewController, SegementSlideContentScrol
         return cell
     }
 
-    //XMLのdelegate XMLの書式で書かれたものを一つずつ見ていく didStattElementでparseを開始
+    //XMLのdelegate XMLの書式で書かれたものを一つずつ見ていく didStartElementでparseを開始
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
         currentElementName = nil
-        //itemという要素の当たったら
+        //itemという要素に当たったら
         if elementName == "item"{
-            //NewsItemsを初期化してください=>Modelに作ったクラスの実体化 そのプロパティをnewsItemsのいれる
+            //NewsItemsを初期化=>Modelに作ったクラスの実体化 そのプロパティをnewsItemsにいれる []
             self.newsItems.append(NewsItems())
             
         }else{
             
             //現在の要素の名前
             currentElementName = elementName
+
             
         }
         
     }
     
+    //stringにdidStartElementで見つかった要素が入る
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         
         if self.newsItems.count > 0{
-            
+
+            //newsItemsにはmodelで定義したNewsItems型のデータが入っている
+            //lastItemにtitle,url,pubDateの各要素を格納
             let lastItem = self.newsItems[self.newsItems.count - 1]
             
             switch self.currentElementName{
@@ -138,11 +145,12 @@ class Page1TableViewController: UITableViewController, SegementSlideContentScrol
     //XMLファイルの中身→ <title>タイトル</title> </title>←ここにきた時に終わる
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
+        //現在の要素名を空にする　リセット
         self.currentElementName = nil
         
     }
     
-    //全て終わったら
+    //全て解析終わったらテーブルを更新
     func parserDidEndDocument(_ parser: XMLParser) {
         
         //セルをアップデート
@@ -150,13 +158,18 @@ class Page1TableViewController: UITableViewController, SegementSlideContentScrol
         
     }
     
+    //セルがタップされた時にwebViewにurlを渡す
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //webViewControllerにurlを渡して表示 タップされたセル
         let webViewController = WebViewController()
+        //モーダル遷移の動き
         webViewController.modalTransitionStyle = .crossDissolve
+        //タップしたセルのnewsItemにtitle,url,pubDateが格納される
         let newsItem = newsItems[indexPath.row]
+        //アプリ内にurlを"url"をkeyとして保存
         UserDefaults.standard.setValue(newsItem.url, forKey: "url")
+        //webViewControllerで表示
         present(webViewController, animated: true, completion: nil)
     }
     

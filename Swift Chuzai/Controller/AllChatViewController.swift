@@ -81,6 +81,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         self.navigationController?.isNavigationBarHidden = true
         
+        tableView.reloadData()
+        
     }
     
     //ロード　Firebaseの全メッセージ取得
