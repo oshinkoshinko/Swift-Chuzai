@@ -37,7 +37,7 @@ class MypageViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         
-        //ユーザ情報取得
+        //ユーザ情報取得  編集後に再描画する必要あるためviewWillAppear
         let user = Auth.auth().currentUser
         if let user = user {
 

@@ -246,13 +246,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         //セルの選択解除
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //performSegueで遷移先のVCインスタンスを取得し遷移するver. performSegue()は内部でprepare()をコールする
-        //performSegue(withIdentifier: "eachUserVC", sender: nil)
-        
-        
-        
-        
         let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
+        //画像url受け渡し
         eachUserVC.imageUrl = imageURL
         navigationController?.pushViewController(eachUserVC, animated: true)
 
@@ -336,20 +331,6 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         }
     }
-    
-    //performSegue使うver didSelectRowAtでsenderに渡された値がsenderに入ってる //Segue実行前処理
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//
-//            let eachUserVC = (segue.destination as? EachUserViewController)!
-//
-//            eachUserVC.imageUrl = imageURL
-//
-//
-//    }
-//
-    
-    
     
     /*
     // MARK: - Navigation

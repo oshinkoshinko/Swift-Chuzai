@@ -41,7 +41,8 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
 
             let userID = user.uid
             let ref = db.collection("User").document(userID)
-
+            
+            //フォームに登録値入力
             ref.getDocument{ [self] (document, error) in
                 if let document = document {
                     let data = document.data()
@@ -91,7 +92,7 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
     }
     
     
-    
+    //更新アクション
     @IBAction func update(_ sender: Any) {
         
         let image = profileImage.image
