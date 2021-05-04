@@ -11,13 +11,23 @@ import Firebase
 class ViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        emailTextField.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        emailTextField.layer.borderWidth = 2.0
+        
+        passwordTextField.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        passwordTextField.layer.borderWidth = 2.0
+        
+
+        startButton.layer.borderColor = UIColor.systemTeal.cgColor
+        startButton.layer.borderWidth = 2.0
 
     }
 
