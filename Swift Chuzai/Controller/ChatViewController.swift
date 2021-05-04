@@ -18,7 +18,11 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var roomName = String()
     var imageString = String()
+    
+    //プロフ画像受け渡す用
     var imageURL = String()
+    //uid受け渡す用
+    var uid = String()
     
     //構造体Message型が入る配列
     var messages:[Message] = []
@@ -110,10 +114,10 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     //doc.dataでbodyやdateが入る
                     let data = doc.data()
                     //必要なデータを取得
-                    if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String, let documentID = data["documentID"] as? String{
+                    if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String, let documentID = data["documentID"] as? String, let uid = data["uid"] as? String{
                         
                         //構造体Messageにセットでデータを格納
-                        let newMessage = Message(sender: sender, body: body, imageString: imageString, documentID: documentID)
+                        let newMessage = Message(sender: sender, body: body, imageString: imageString, documentID: documentID, uid: uid)
                         
                         self.messages.append(newMessage)
                         
@@ -189,12 +193,12 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBAction func send(_ sender: Any) {
         
-        if let messageBody = messageTextField.text,let sender = Auth.auth().currentUser?.email{
+        if let messageBody = messageTextField.text,let sender = Auth.auth().currentUser?.email,let uid = Auth.auth().currentUser?.uid{
             
             //Firebase内のデータを辞書型で追加
             var ref: DocumentReference? = nil
 
-            ref = db.collection(roomName).addDocument(data: ["sender":sender,"body":messageBody,"imageString":imageString,"date":Date().timeIntervalSince1970,"documentID":""]) { (error) in
+            ref = db.collection(roomName).addDocument(data: ["sender":sender,"body":messageBody,"imageString":imageString,"uid":uid,"date":Date().timeIntervalSince1970,"documentID":""]) { (error) in
                 
                 if error != nil{
                     
@@ -204,7 +208,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 } else {
                     
                     //documentIDをfirestoreに格納
-                    ref!.updateData(["sender":sender,"body":messageBody,"imageString":self.imageString,"date":Date().timeIntervalSince1970,"documentID":ref?.documentID])
+                    ref!.updateData(["sender":sender,"body":messageBody,"imageString":self.imageString,"uid":uid,"date":Date().timeIntervalSince1970,"documentID":ref?.documentID])
                     
                 }
                 
@@ -221,20 +225,19 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    //セルがタップされた時の処理 didSelectRowAt indexPath.rowでセルの行番号取得
+    //セルがタップされた時の処理 indexPath.rowでセルの行番号取得
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         imageURL = messages[indexPath.row].imageString
-        
+        uid = messages[indexPath.row].uid
+
         //セルの選択解除
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //performSegueで遷移先のVCインスタンスを取得し遷移するver. performSegue()は内部でprepare()をコールする
-        //performSegue(withIdentifier: "eachUserVC", sender: nil)
-        
-        
         let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
+        
         eachUserVC.imageUrl = imageURL
+        eachUserVC.uid = uid
         
         navigationController?.pushViewController(eachUserVC, animated: true)
         
@@ -304,9 +307,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             deleteAction.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
             
             let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
-    //        swipeAction.performsFirstActionWithFullSwipe = false
-            
-    //        self.tableView.reloadData()
             
             return swipeAction
             

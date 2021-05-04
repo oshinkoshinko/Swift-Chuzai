@@ -12,5 +12,6 @@ struct Message {
     let sender:String
     let body:String
     let imageString:String
-    let documentID: String
+    let documentID:String
+    let uid:String
 }

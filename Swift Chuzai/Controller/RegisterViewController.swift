@@ -78,6 +78,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 self.sendToDBModel.sendProfileImageData(data: data!)
              
                 let user = Auth.auth().currentUser
+                let email = user?.email
                 //ユーザデータ用コレクション作成
                 var ref: DocumentReference? = nil
                 //userIDにuidを代入
@@ -85,7 +86,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 
                 ref = db.collection("User").document(userID)
                 
-                ref?.setData(["userName":userNameTextField.text as Any,"introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"imageString":"", "registerDate":Date().timeIntervalSince1970])
+                ref?.setData(["userName":userNameTextField.text as Any,"introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"imageString":"","email":email as Any, "registerDate":Date().timeIntervalSince1970])
                 { err in if let err = err{
                     print("Error adding document: \(err)")
                 } else {

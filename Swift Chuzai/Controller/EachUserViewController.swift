@@ -13,6 +13,7 @@ import FirebaseStorage
 class EachUserViewController: UIViewController {
 
     var imageUrl = String()
+    var uid = String()
     
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -24,11 +25,9 @@ class EachUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadUser()
 
-        print("岡真也 imageUrl")
-        print(imageUrl)
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -37,17 +36,17 @@ class EachUserViewController: UIViewController {
         super.viewWillAppear(animated)
 
         self.navigationController?.isNavigationBarHidden = false
-        loadUser()
         
     }
     
     func loadUser(){
         
         let userRef = db.collection("User")
-        let thisUserRef = userRef.whereField("imageString", isEqualTo: imageUrl)
+
+        let thisUserRef = userRef.whereField("uid", isEqualTo: uid)
         
-        print("イメージurl")
-        print(imageUrl)
+        print("送信者")
+        print(uid)
         
         
         thisUserRef.getDocuments { [self] (querySnapshot, error) in
@@ -66,12 +65,6 @@ class EachUserViewController: UIViewController {
                     self.phoneNumberLabel.text = data["phoneNumber"] as? String
                     self.introductionLabel.text = data["introduction"] as? String
                     self.profile.sd_setImage(with: URL(string: imageUrl as! String), completed: nil)
-                    
-                print("あいう")
-                print(data)
-                print(data["userName"] as? String)
-                
-
                     
                 }
             }
