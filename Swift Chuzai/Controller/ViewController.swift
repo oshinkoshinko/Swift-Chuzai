@@ -19,9 +19,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
+    }
 
     @IBAction func login(_ sender: Any) {
         
