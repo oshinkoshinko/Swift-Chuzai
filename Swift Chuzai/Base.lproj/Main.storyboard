@@ -291,7 +291,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uBM-8b-SKq"/>
-                        <color key="backgroundColor" red="0.71414333140893338" green="0.89821938451776651" blue="0.66629149544374799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pzn-iD-GbD"/>
                     <connections>
@@ -577,7 +577,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wnd-K0-61b"/>
-                        <color key="backgroundColor" red="0.66253656149999995" green="0.91057431700000002" blue="0.64309632780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All Users" image="person.3" catalog="system" id="6b6-4S-Sqd"/>
                     <connections>
