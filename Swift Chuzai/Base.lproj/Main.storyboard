@@ -131,7 +131,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profman" translatesAutoresizingMaskIntoConstraints="NO" id="00p-g2-ysE">
-                                <rect key="frame" x="82" y="135" width="227" height="217"/>
+                                <rect key="frame" x="82" y="135" width="227" height="227"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -381,10 +381,6 @@
                                     <action selector="edit:" destination="72c-OP-bjj" eventType="touchUpInside" id="tHM-mP-hiF"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tco-kj-Usd">
-                                <rect key="frame" x="75" y="106" width="240" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy2-QC-nrM">
                                 <rect key="frame" x="75" y="678" width="77" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -396,6 +392,10 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Kij-zP-O3q"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tco-kj-Usd">
+                                <rect key="frame" x="82" y="98" width="227" height="227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L3H-hT-Mz4"/>
                         <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -406,7 +406,6 @@
                         <outlet property="emailLabel" destination="Nb2-Bt-1gg" id="rNF-cZ-wMc"/>
                         <outlet property="introductionLabel" destination="Sh4-W9-XVq" id="fUQ-Vh-wkE"/>
                         <outlet property="phoneNumberLabel" destination="Yoe-Lg-jfH" id="QrU-ej-07O"/>
-                        <outlet property="profile" destination="tco-kj-Usd" id="FiP-fK-CAz"/>
                         <outlet property="profileImage" destination="tco-kj-Usd" id="SBp-Ov-H8g"/>
                         <outlet property="userNameLabel" destination="pGD-eh-BKF" id="reT-Qs-3NF"/>
                         <segue destination="6rA-JT-oZK" kind="show" identifier="userEdit" id="lDd-9I-GFq"/>
@@ -473,14 +472,6 @@
                                     <action selector="update:" destination="6rA-JT-oZK" eventType="touchUpInside" id="PPh-uD-fuw"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UL7-Wn-q7S">
-                                <rect key="frame" x="74" y="106" width="240" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="7Qk-Kp-FTH" appends="YES" id="cDL-a8-PNI"/>
-                                </connections>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEX-SP-oVX">
                                 <rect key="frame" x="74" y="369" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -510,6 +501,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UL7-Wn-q7S">
+                                <rect key="frame" x="82" y="98" width="227" height="227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7Qk-Kp-FTH" appends="YES" id="cDL-a8-PNI"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pqD-Nv-IH6"/>
                         <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -641,10 +640,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPr-c5-2lS">
-                                <rect key="frame" x="76" y="116" width="240" height="214"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrZ-SJ-a4k">
                                 <rect key="frame" x="225" y="636" width="92" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -653,6 +648,10 @@
                                     <action selector="call:" destination="6Yw-yf-t3i" eventType="touchUpInside" id="Cb9-n1-LHg"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPr-c5-2lS">
+                                <rect key="frame" x="82" y="98" width="227" height="227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vE9-II-6XO"/>
                         <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

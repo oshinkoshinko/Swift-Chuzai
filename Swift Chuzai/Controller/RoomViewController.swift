@@ -65,7 +65,7 @@ class RoomViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
         imageView.image = UIImage(named: roomImageStringArray[indexPath.row])
-        imageView.layer.cornerRadius = 25.0
+        imageView.layer.cornerRadius = imageView.frame.height/2
         
         let label = cell.contentView.viewWithTag(2) as! UILabel
         label.text = roomNameArray[indexPath.row]

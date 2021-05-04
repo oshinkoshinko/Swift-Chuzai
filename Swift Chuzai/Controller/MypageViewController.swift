@@ -13,7 +13,6 @@ import SDWebImage
 class MypageViewController: UIViewController {
 
     
-    @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -26,7 +25,7 @@ class MypageViewController: UIViewController {
         super.viewDidLoad()
         
 
-   
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
         
         
         // Do any additional setup after loading the view.

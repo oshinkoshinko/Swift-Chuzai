@@ -26,6 +26,8 @@ class EachUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profile.layer.cornerRadius = profile.frame.height/2
+        
         loadUser()
 
         // Do any additional setup after loading the view.

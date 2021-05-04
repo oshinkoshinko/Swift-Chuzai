@@ -28,6 +28,8 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        
         userNameTextField.delegate = self
         emailTextField.delegate = self
         numberTextField.delegate = self

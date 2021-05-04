@@ -43,6 +43,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         
     }
     
@@ -79,6 +80,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
              
                 let user = Auth.auth().currentUser
                 let email = user?.email
+                
                 //ユーザデータ用コレクション作成
                 var ref: DocumentReference? = nil
                 //userIDにuidを代入
