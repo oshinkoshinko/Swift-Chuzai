@@ -49,6 +49,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let userID = user!.uid
             let ref = db.collection("User").document(userID)
             
+            //ルーム名なし==全体チャット
+            if roomName == ""{
+                
+                roomName = "All"
+                
+            }
+            
             ref.getDocument{ [self] (document, error) in
                 if let document = document {
                     let data = document.data()
@@ -58,25 +65,11 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         
                         imageString = loginImageString as! String
                         
-                        //ルーム名なし==全体チャット
-                        if roomName == ""{
-                            
-                            roomName = "All"
-                            
-                        }
-                        
                         self.navigationItem.title = roomName
                         
                         loadMessages(roomName: roomName)
                         
                     } else {
-                        
-                        //ルーム名なし==全体チャット
-                        if roomName == ""{
-                            
-                            roomName = "All"
-                            
-                        }
                         
                         self.navigationItem.title = roomName
                         

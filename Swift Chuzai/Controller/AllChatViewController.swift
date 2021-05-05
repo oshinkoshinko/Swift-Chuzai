@@ -56,6 +56,13 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
             let userID = user!.uid
             let ref = db.collection("User").document(userID)
             
+            //ルーム名なし==全体チャット
+            if roomName == ""{
+                
+                roomName = "All"
+                
+            }
+            
             ref.getDocument{ [self] (document, error) in
                 if let document = document {
                     let data = document.data()
@@ -65,25 +72,12 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                         
                         imageString = loginImageString as! String
                         
-                        //ルーム名なし==全体チャット
-                        if roomName == ""{
-                            
-                            roomName = "All"
-                            
-                        }
-                        
                         self.navigationItem.title = roomName
                         
                         loadMessages(roomName: roomName)
                         
                     } else {
                         
-                        //ルーム名なし==全体チャット
-                        if roomName == ""{
-                            
-                            roomName = "All"
-                            
-                        }
                         
                         self.navigationItem.title = roomName
                         
@@ -137,25 +131,6 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     
                     //必要なデータを取得
                     if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String, let documentID = data["documentID"] as? String, let uid = data["uid"] as? String{
-                        
-                        
-                        let user = Auth.auth().currentUser
-                        let userID = user!.uid
-                        let ref = db.collection("User").document(userID)
-                        
-                        ref.getDocument{ [self] (document, error) in
-                            if let document = document {
-                                let data = document.data()
-                                let loginImageString = data!["imageString"]
-                                
-                                if loginImageString as! String != imageString{
-                                    
-                                    self.imageString = loginImageString as! String
-
-                                }
-                                
-                            }
-                        }
                         
                         //構造体Messageにセットでデータを格納
                         let newMessage = Message(sender: sender, body: body, imageString: imageString, documentID: documentID, uid: uid)
