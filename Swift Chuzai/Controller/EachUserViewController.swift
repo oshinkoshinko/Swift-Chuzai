@@ -38,6 +38,13 @@ class EachUserViewController: UIViewController {
         super.viewWillAppear(animated)
 
         self.navigationController?.isNavigationBarHidden = false
+        // ナビゲーションバーの透明化
+        // 半透明の指定（デフォルト値）
+        self.navigationController?.navigationBar.isTranslucent = true
+        // 空の背景画像設定
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        // ナビゲーションバーの影画像を空に設定
+        self.navigationController!.navigationBar.shadowImage = UIImage()
         
     }
     
