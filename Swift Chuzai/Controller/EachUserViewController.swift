@@ -84,8 +84,13 @@ class EachUserViewController: UIViewController {
     
     //電話発信
     @IBAction func call(_ sender: Any) {
-        print(phoneNumberLabel.text)
-        UIApplication.shared.open(URL(string: "tel://\(phoneNumberLabel.text)")!, options: [:], completionHandler: nil)
+        
+        let url = NSURL(string: "tel://\(phoneNumberLabel.text!)")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url as URL)
+        } else {
+            UIApplication.shared.openURL(url as URL)
+        }
         
     }
     
