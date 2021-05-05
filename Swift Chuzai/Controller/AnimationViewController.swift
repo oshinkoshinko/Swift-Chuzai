@@ -18,8 +18,6 @@ class AnimationViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         
         //スクロールビューのページング
         scrollView.isPagingEnabled = true

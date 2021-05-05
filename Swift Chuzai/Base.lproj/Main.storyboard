@@ -542,7 +542,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="japan" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-UD-u0U">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back1" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-UD-u0U">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="678"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -581,6 +581,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="All Users" image="person.3" catalog="system" id="6b6-4S-Sqd"/>
                     <connections>
+                        <outlet property="backImageView" destination="cSB-UD-u0U" id="q3f-Pr-qbG"/>
                         <outlet property="messageTextField" destination="wHx-V5-wR4" id="XMc-SC-qfC"/>
                         <outlet property="tableView" destination="6xl-42-RtO" id="z53-oK-HLa"/>
                         <segue destination="6Yw-yf-t3i" kind="show" identifier="eachUserVC" id="UHJ-Ex-8Mc"/>
@@ -712,15 +713,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EMQ-c6-Q1v"/>
         <segue reference="J6C-cu-626"/>
         <segue reference="7Ho-Fg-jJL"/>
         <segue reference="Kij-zP-O3q"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="back1" width="3024" height="4032"/>
         <image name="backimage" width="3639" height="5463"/>
         <image name="call" width="256" height="256"/>
-        <image name="japan" width="4000" height="6000"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>

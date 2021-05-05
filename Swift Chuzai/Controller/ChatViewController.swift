@@ -59,10 +59,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         imageString = loginImageString as! String
                         
                     }
-                    
                 }
             }
-            
         }
         //ルーム名なし==全体チャット
         if roomName == ""{

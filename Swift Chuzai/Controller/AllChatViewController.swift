@@ -12,6 +12,7 @@ import SDWebImage
 class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
+    @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     let db = Firestore.firestore()
@@ -28,6 +29,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var messages:[Message] = []
         
     var documentID = String()
+    
+    var backImageArray = ["back1","back2","back3","back4","back5","back6","back7","back8","back9","back10","back11","back12","back13","back14","back15","back16","back17","back18","back19","back20",]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +81,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        backImageView.image = UIImage(named: backImageArray.randomElement()!)
         
         self.navigationController?.isNavigationBarHidden = true
         
