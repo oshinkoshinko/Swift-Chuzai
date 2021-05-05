@@ -58,20 +58,34 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         
                         imageString = loginImageString as! String
                         
+                        //ルーム名なし==全体チャット
+                        if roomName == ""{
+                            
+                            roomName = "All"
+                            
+                        }
+                        
+                        self.navigationItem.title = roomName
+                        
+                        loadMessages(roomName: roomName)
+                        
+                    } else {
+                        
+                        //ルーム名なし==全体チャット
+                        if roomName == ""{
+                            
+                            roomName = "All"
+                            
+                        }
+                        
+                        self.navigationItem.title = roomName
+                        
+                        loadMessages(roomName: roomName)
+                                                
                     }
                 }
             }
         }
-        //ルーム名なし==全体チャット
-        if roomName == ""{
-            
-            roomName = "All"
-            
-        }
-        
-        self.navigationItem.title = roomName
-        
-        loadMessages(roomName: roomName)
     }
     
     override func viewWillAppear(_ animated: Bool) {

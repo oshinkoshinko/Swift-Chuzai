@@ -30,6 +30,7 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
     var documentID = String()
     
+    //背景画像用配列
     var backImageArray = ["back1","back2","back3","back4","back5","back6","back7","back8","back9","back10","back11","back12","back13","back14","back15","back16","back17","back18","back19","back20",]
     
     override func viewDidLoad() {
@@ -42,11 +43,14 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
-        //userimageにurlが入っていたら
+        //新規登録後、userimageにurlが入っていたら
         if UserDefaults.standard.object(forKey: "userImage") != nil{
             
             //imageStringにurlを文字列型で格納
             imageString = UserDefaults.standard.object(forKey: "userImage") as! String
+            
+            print("ログイン時")
+            print(imageString)
             
             let user = Auth.auth().currentUser
             let userID = user!.uid
@@ -61,22 +65,37 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                         
                         imageString = loginImageString as! String
                         
+                        //ルーム名なし==全体チャット
+                        if roomName == ""{
+                            
+                            roomName = "All"
+                            
+                        }
+                        
+                        self.navigationItem.title = roomName
+                        
+                        loadMessages(roomName: roomName)
+                        
+                    } else {
+                        
+                        //ルーム名なし==全体チャット
+                        if roomName == ""{
+                            
+                            roomName = "All"
+                            
+                        }
+                        
+                        self.navigationItem.title = roomName
+                        
+                        loadMessages(roomName: roomName)
+                        
                     }
                     
                 }
             }
-            
+                        
         }
-        //ルーム名なし==全体チャット
-        if roomName == ""{
-            
-            roomName = "All"
-            
-        }
-        
-        self.navigationItem.title = roomName
-        
-        loadMessages(roomName: roomName)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -132,7 +151,7 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                                 if loginImageString as! String != imageString{
                                     
                                     self.imageString = loginImageString as! String
-                                    
+
                                 }
                                 
                             }
