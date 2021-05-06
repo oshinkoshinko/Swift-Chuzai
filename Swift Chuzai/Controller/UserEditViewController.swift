@@ -30,6 +30,8 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
 
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         
+        introductionTextField.layer.cornerRadius = 5
+        
         userNameTextField.delegate = self
         emailTextField.delegate = self
         numberTextField.delegate = self

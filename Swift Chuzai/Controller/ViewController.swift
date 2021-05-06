@@ -21,10 +21,11 @@ class ViewController: UIViewController {
 
         emailTextField.layer.borderColor = UIColor.secondarySystemBackground.cgColor
         emailTextField.layer.borderWidth = 2.0
+        emailTextField.layer.cornerRadius = 5
         
         passwordTextField.layer.borderColor = UIColor.secondarySystemBackground.cgColor
         passwordTextField.layer.borderWidth = 2.0
-        
+        passwordTextField.layer.cornerRadius = 5
 
         startButton.layer.borderColor = UIColor.systemTeal.cgColor
         startButton.layer.borderWidth = 2.0

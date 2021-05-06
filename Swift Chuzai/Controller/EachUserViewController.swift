@@ -28,6 +28,13 @@ class EachUserViewController: UIViewController {
         
         profile.layer.cornerRadius = profile.frame.height/2
         
+        userNameLabel.layer.cornerRadius = 5
+        userNameLabel.clipsToBounds = true
+        phoneNumberLabel.layer.cornerRadius = 5
+        phoneNumberLabel.clipsToBounds = true
+        introductionLabel.layer.cornerRadius = 5
+        introductionLabel.clipsToBounds = true
+        
         loadUser()
 
         // Do any additional setup after loading the view.

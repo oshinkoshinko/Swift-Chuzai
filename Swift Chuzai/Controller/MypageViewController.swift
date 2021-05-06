@@ -24,8 +24,17 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         profileImage.layer.cornerRadius = profileImage.frame.height/2
+        
+        emailLabel.layer.cornerRadius = 5
+        emailLabel.clipsToBounds = true
+        userNameLabel.layer.cornerRadius = 5
+        userNameLabel.clipsToBounds = true
+        phoneNumberLabel.layer.cornerRadius = 5
+        phoneNumberLabel.clipsToBounds = true
+        introductionLabel.layer.cornerRadius = 5
+        introductionLabel.clipsToBounds = true
+
         
         
         // Do any additional setup after loading the view.

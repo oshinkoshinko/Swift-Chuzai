@@ -120,7 +120,7 @@ class Page1TableViewController: UITableViewController, SegementSlideContentScrol
         if self.newsItems.count > 0{
 
             //newsItemsにはmodelで定義したNewsItems型のデータが入っている
-            //lastItemにtitle,url,pubDateの各要素を格納
+            //lastItem(NewsItems型)にtitle,url,pubDateの各要素を格納
             let lastItem = self.newsItems[self.newsItems.count - 1]
             
             switch self.currentElementName{
