@@ -9,10 +9,11 @@ import UIKit
 import Firebase
 import SDWebImage
 
-class UserListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class UserListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     
 
+    @IBOutlet weak var searchField: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     //構造体User型が入る配列
@@ -26,7 +27,7 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        searchField.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -159,6 +160,38 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
     }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchText = searchBar.text else {
+            return
+        }
+        print(searchText)
+        search(searchText)
+        
+    }
+    
+    func search(_ text:String) {
+        
+        var newUsers: [User] = []
+        
+        users.forEach({
+            
+            //User構造体の中のどの要素か指定する userNameなど
+            if $0.userName.contains(text) {
+                newUsers.insert($0,at: 0)
+            } else {
+                newUsers.append($0)
+            }
+            
+        })
+        users = newUsers
+        collectionView.reloadData()
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
