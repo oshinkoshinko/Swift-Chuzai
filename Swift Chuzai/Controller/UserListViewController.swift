@@ -34,8 +34,8 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
                 // セルのサイズ
                 flowLayout.itemSize = CGSize(width: 120.0, height: 120.0)
                 // 縦・横のスペース
-        flowLayout.minimumLineSpacing = -50.0
-        flowLayout.minimumInteritemSpacing = -50.0
+        flowLayout.minimumLineSpacing = -30.0
+        flowLayout.minimumInteritemSpacing = 0.0
                 //  スクロールの方向
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
                 // 設定内容を反映させる
