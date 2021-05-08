@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
 
     @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -59,7 +60,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBAction func register(_ sender: Any) {
         
         //各TextFieldが空でないか
-        if userNameTextField.text?.isEmpty != true && emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
+        if userNameTextField.text?.isEmpty != true && countryTextField.text?.isEmpty != true && emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
             
             //FirebaseのAuthentificationに入る
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { [self] (result, error) in
@@ -88,7 +89,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 
                 ref = db.collection("User").document(userID)
                 
-                ref?.setData(["userName":userNameTextField.text as Any,"introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"imageString":"","email":email as Any, "registerDate":Date().timeIntervalSince1970])
+                ref?.setData(["userName":userNameTextField.text as Any,"country":countryTextField.text as Any,"introduction":"","phoneNumber":"" ,"uid":user?.uid as Any,"imageString":"","email":email as Any, "registerDate":Date().timeIntervalSince1970])
                 { err in if let err = err{
                     print("Error adding document: \(err)")
                 } else {

@@ -39,7 +39,6 @@
 		D539451C2629D0F400DAC940 /* Page9TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451B2629D0F400DAC940 /* Page9TableViewController.swift */; };
 		D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539451E2629D12400DAC940 /* Page10TableViewController.swift */; };
 		D53945222629DD0E00DAC940 /* Page11TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53945212629DD0E00DAC940 /* Page11TableViewController.swift */; };
-		D548FC8026457AB500B976D0 /* UsersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D548FC7F26457AB500B976D0 /* UsersCollectionViewController.swift */; };
 		D598A9B0263970E300264EB2 /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9AF263970E300264EB2 /* UserEditViewController.swift */; };
 		D598A9B3263BE75200264EB2 /* EachUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9B2263BE75200264EB2 /* EachUserViewController.swift */; };
 		D598A9B6263D563500264EB2 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D598A9B5263D563500264EB2 /* AnimationViewController.swift */; };
@@ -90,7 +89,6 @@
 		D539451B2629D0F400DAC940 /* Page9TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page9TableViewController.swift; sourceTree = "<group>"; };
 		D539451E2629D12400DAC940 /* Page10TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10TableViewController.swift; sourceTree = "<group>"; };
 		D53945212629DD0E00DAC940 /* Page11TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page11TableViewController.swift; sourceTree = "<group>"; };
-		D548FC7F26457AB500B976D0 /* UsersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewController.swift; sourceTree = "<group>"; };
 		D598A9AF263970E300264EB2 /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		D598A9B2263BE75200264EB2 /* EachUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachUserViewController.swift; sourceTree = "<group>"; };
 		D598A9B5263D563500264EB2 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 				D598A9AF263970E300264EB2 /* UserEditViewController.swift */,
 				D598A9B2263BE75200264EB2 /* EachUserViewController.swift */,
 				D598A9B5263D563500264EB2 /* AnimationViewController.swift */,
-				D548FC7F26457AB500B976D0 /* UsersCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,7 +359,6 @@
 				D539451F2629D12400DAC940 /* Page10TableViewController.swift in Sources */,
 				D53944A02628100C00DAC940 /* SceneDelegate.swift in Sources */,
 				D5A7CFE32638134900EA8A19 /* MypageViewController.swift in Sources */,
-				D548FC8026457AB500B976D0 /* UsersCollectionViewController.swift in Sources */,
 				D598A9B6263D563500264EB2 /* AnimationViewController.swift in Sources */,
 				D539450D2629D04100DAC940 /* Page4TableViewController.swift in Sources */,
 				D53945162629D0BF00DAC940 /* Page7TableViewController.swift in Sources */,
