@@ -20,6 +20,9 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
     
     let db = Firestore.firestore()
     
+    var imageURL = String()
+    var uid = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -134,6 +137,26 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         countryLabel.text = users[indexPath.row].country
         
         return cell
+        
+    }
+    
+    //アイテムの選択　画面遷移
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        imageURL = users[indexPath.row].imageString
+        uid = users[indexPath.row].uid
+        
+        //セルの選択解除
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
+        
+        //画像url受け渡し
+        eachUserVC.imageUrl = imageURL
+        //送信者uid受け渡し
+        eachUserVC.uid = uid
+        navigationController?.pushViewController(eachUserVC, animated: true)
+        
         
     }
     /*
