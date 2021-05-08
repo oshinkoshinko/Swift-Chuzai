@@ -29,6 +29,20 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         
         self.navigationItem.title = "すべてのユーザー"
         
+        // セルのレイアウトを設定
+                let flowLayout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+                // セルのサイズ
+                flowLayout.itemSize = CGSize(width: 80.0, height: 80.0)
+                // 縦・横のスペース
+                flowLayout.minimumLineSpacing = 3.0
+                flowLayout.minimumInteritemSpacing = 3.0
+                //  スクロールの方向
+        flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
+                // 設定内容を反映させる
+                self.collectionView.collectionViewLayout = flowLayout
+                // 背景色を設定
+                self.collectionView?.backgroundColor =  UIColor.white
+        
         loadUserData()
         // Do any additional setup after loading the view.
     }
@@ -113,7 +127,10 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let contentImageView = cell.contentView.viewWithTag(1) as! UIImageView
         contentImageView.sd_setImage(with: URL(string: users[indexPath.row].imageString), completed: nil)
-        
+        let nameLabel = cell.contentView.viewWithTag(2) as! UILabel
+        nameLabel.text = String(users[indexPath.row].userName)
+        let countryLabel = cell.contentView.viewWithTag(3) as! UILabel
+        countryLabel.text = users[indexPath.row].country
         
         return cell
         
