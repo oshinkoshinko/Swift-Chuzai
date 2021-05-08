@@ -14,6 +14,7 @@ class MypageViewController: UIViewController {
 
     
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var introductionLabel: UILabel!
@@ -26,6 +27,8 @@ class MypageViewController: UIViewController {
         
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         
+        countryLabel.layer.cornerRadius = 5
+        countryLabel.clipsToBounds = true
         emailLabel.layer.cornerRadius = 5
         emailLabel.clipsToBounds = true
         userNameLabel.layer.cornerRadius = 5
@@ -57,6 +60,8 @@ class MypageViewController: UIViewController {
                     let data = document.data()
                     let name = data!["userName"]
                     self.userNameLabel.text = name as! String
+                    let country = data!["country"]
+                    self.countryLabel.text = country as! String
                     let number = data!["phoneNumber"]
                     self.phoneNumberLabel.text = number as! String
                     let introduction = data!["introduction"]

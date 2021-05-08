@@ -21,6 +21,7 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var introductionTextField: UITextView!
@@ -33,6 +34,7 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
         introductionTextField.layer.cornerRadius = 5
         
         userNameTextField.delegate = self
+        countryTextField.delegate = self
         emailTextField.delegate = self
         numberTextField.delegate = self
         introductionTextField.delegate = self
@@ -53,6 +55,9 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
                     
                     let name = data!["userName"]
                     self.userNameTextField.text = name as! String
+                    
+                    let country = data!["country"]
+                    self.countryTextField.text = country as! String
                     
                     let number = data!["phoneNumber"]
                     self.numberTextField.text = number as! String
@@ -88,6 +93,7 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
     //入力後にキーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        countryTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         userNameTextField.resignFirstResponder()
         numberTextField.resignFirstResponder()
@@ -110,7 +116,7 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
         guard let userID = user?.uid else { fatalError() }
         let ref = db.collection("User").document(userID)
         
-        ref.updateData(["userName":userNameTextField.text as Any,"introduction":introductionTextField.text as Any,"phoneNumber":numberTextField.text as Any])
+        ref.updateData(["userName":userNameTextField.text as Any,"country":countryTextField.text as Any,"introduction":introductionTextField.text as Any,"phoneNumber":numberTextField.text as Any])
         { err in if let err = err{
             print("Error adding document: \(err)")
         } else {
