@@ -17,6 +17,7 @@ class EachUserViewController: UIViewController {
     
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var introductionLabel: UILabel!
     
@@ -30,6 +31,8 @@ class EachUserViewController: UIViewController {
         
         userNameLabel.layer.cornerRadius = 5
         userNameLabel.clipsToBounds = true
+        countryLabel.layer.cornerRadius = 5
+        countryLabel.clipsToBounds = true
         phoneNumberLabel.layer.cornerRadius = 5
         phoneNumberLabel.clipsToBounds = true
         introductionLabel.layer.cornerRadius = 5
@@ -78,6 +81,7 @@ class EachUserViewController: UIViewController {
                 
                 let data = document.data()
                     self.userNameLabel.text = data["userName"] as? String
+                    self.countryLabel.text = data["country"] as? String
                     self.phoneNumberLabel.text = data["phoneNumber"] as? String
                     self.introductionLabel.text = data["introduction"] as? String
                     self.profile.sd_setImage(with: URL(string: imageUrl as! String), completed: nil)
