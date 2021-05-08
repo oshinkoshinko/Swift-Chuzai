@@ -32,10 +32,10 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         // セルのレイアウトを設定
                 let flowLayout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
                 // セルのサイズ
-                flowLayout.itemSize = CGSize(width: 80.0, height: 80.0)
+                flowLayout.itemSize = CGSize(width: 120.0, height: 120.0)
                 // 縦・横のスペース
-                flowLayout.minimumLineSpacing = 3.0
-                flowLayout.minimumInteritemSpacing = 3.0
+        flowLayout.minimumLineSpacing = -50.0
+        flowLayout.minimumInteritemSpacing = -50.0
                 //  スクロールの方向
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
                 // 設定内容を反映させる
@@ -91,7 +91,7 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
                         
                         DispatchQueue.main.async {
                             
-                            //TableViewにメッセージを取得
+                            //CollectionViewにデータを取得
                             self.collectionView.reloadData()
                             let indexPath = IndexPath(row: self.users.count - 1, section: 0)
  
@@ -127,6 +127,7 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let contentImageView = cell.contentView.viewWithTag(1) as! UIImageView
         contentImageView.sd_setImage(with: URL(string: users[indexPath.row].imageString), completed: nil)
+        contentImageView.layer.cornerRadius = contentImageView.frame.height/2
         let nameLabel = cell.contentView.viewWithTag(2) as! UILabel
         nameLabel.text = String(users[indexPath.row].userName)
         let countryLabel = cell.contentView.viewWithTag(3) as! UILabel
