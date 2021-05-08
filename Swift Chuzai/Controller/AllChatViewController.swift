@@ -211,7 +211,7 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         if let messageBody = messageTextField.text,let sender = Auth.auth().currentUser?.email,let uid = Auth.auth().currentUser?.uid{
             
-            //Firebase内のデータを辞書型で追加
+            //Firebase内にデータを辞書型で追加
             var ref: DocumentReference? = nil
             
             ref = db.collection(roomName).addDocument(data: ["sender":sender,"body":messageBody,"imageString":imageString,"uid":uid,"date":Date().timeIntervalSince1970,"documentID":""]) { [self] (error) in

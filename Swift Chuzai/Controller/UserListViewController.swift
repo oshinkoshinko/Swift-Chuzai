@@ -7,15 +7,49 @@
 
 import UIKit
 
-class UserListViewController: UIViewController {
+class UserListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        self.navigationItem.title = "すべてのユーザー"
+        
+        reloadData()
         // Do any additional setup after loading the view.
     }
     
 
+    func reloadData(){
+        
+        
+        
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    //セルの中身
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        
+        let contentImageView = cell.contentView.viewWithTag(1) as! UIImageView
+        
+        
+        
+        return cell
+        
+    }
     /*
     // MARK: - Navigation
 
