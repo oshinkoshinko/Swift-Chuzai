@@ -194,7 +194,7 @@
             <objects>
                 <viewController id="FTe-a8-IIL" customClass="RoomViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzd-bS-7th">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xz7-6m-Hgb">
@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n70-qJ-F6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="921"/>
+            <point key="canvasLocation" x="3442" y="1147"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="RxV-v3-T1o">
@@ -312,7 +312,7 @@
             </objects>
             <point key="canvasLocation" x="4170.7692307692305" y="445.73459715639808"/>
         </scene>
-        <!--User List View Controller-->
+        <!--All Users-->
         <scene sceneID="muA-zB-xco">
             <objects>
                 <viewController id="QY1-PQ-xOI" customClass="UserListViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
@@ -372,6 +372,7 @@
                         <viewLayoutGuide key="safeArea" id="WEB-PK-fww"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="All Users" image="person.3" catalog="system" id="I9c-ER-XhA"/>
                     <navigationItem key="navigationItem" id="qmH-iC-lgR"/>
                     <connections>
                         <outlet property="collectionView" destination="OQp-ex-z0B" id="YBo-Sf-Cwt"/>
@@ -381,14 +382,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdW-F9-NCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601.5384615384614" y="-1518.4834123222747"/>
+            <point key="canvasLocation" x="2534" y="913"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="LJN-fg-ky3">
             <objects>
                 <viewController id="72c-OP-bjj" customClass="MypageViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="07P-ET-M1w">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザー名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVo-Ms-j8g">
@@ -493,14 +494,6 @@
                                 <rect key="frame" x="82" y="53" width="227" height="227"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlZ-6E-eaM">
-                                <rect key="frame" x="328" y="151" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="QY1-PQ-xOI" kind="show" id="rVy-Si-ay6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L3H-hT-Mz4"/>
                         <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -519,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAs-ik-gpW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2603.0769230769229" y="-778.43601895734594"/>
+            <point key="canvasLocation" x="3442" y="-906"/>
         </scene>
         <!--User Edit View Controller-->
         <scene sceneID="Xrb-06-HzO">
@@ -650,14 +643,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3441.5384615384614" y="-1003.0805687203791"/>
+            <point key="canvasLocation" x="4171" y="-905"/>
         </scene>
-        <!--All Users-->
+        <!--Chat-->
         <scene sceneID="EEK-j8-Oec">
             <objects>
                 <viewController id="hFJ-gS-xle" customClass="AllChatViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzh-Mn-yev">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back1" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-UD-u0U">
@@ -697,7 +690,7 @@
                         <viewLayoutGuide key="safeArea" id="wnd-K0-61b"/>
                         <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All Users" image="person.3" catalog="system" id="6b6-4S-Sqd"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="message" catalog="system" id="6b6-4S-Sqd"/>
                     <connections>
                         <outlet property="backImageView" destination="cSB-UD-u0U" id="q3f-Pr-qbG"/>
                         <outlet property="messageTextField" destination="wHx-V5-wR4" id="XMc-SC-qfC"/>
@@ -819,8 +812,9 @@
                     <connections>
                         <segue destination="hFJ-gS-xle" kind="relationship" relationship="viewControllers" id="Ox3-Hq-liX"/>
                         <segue destination="FTe-a8-IIL" kind="relationship" relationship="viewControllers" id="bjD-46-IMu"/>
-                        <segue destination="urL-aa-lV8" kind="relationship" relationship="viewControllers" id="0cw-1M-iSS"/>
                         <segue destination="72c-OP-bjj" kind="relationship" relationship="viewControllers" id="Mre-kn-GED"/>
+                        <segue destination="urL-aa-lV8" kind="relationship" relationship="viewControllers" id="0cw-1M-iSS"/>
+                        <segue destination="QY1-PQ-xOI" kind="relationship" relationship="viewControllers" id="emt-IV-wTk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbR-Ir-kTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -847,14 +841,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Mre-kn-GED"/>
         <segue reference="J6C-cu-626"/>
-        <segue reference="Fq1-HZ-DXl"/>
+        <segue reference="UHJ-Ex-8Mc"/>
         <segue reference="Kij-zP-O3q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back1" width="3024" height="4032"/>
         <image name="backimage" width="3639" height="5463"/>
         <image name="call" width="256" height="256"/>
+        <image name="message" catalog="system" width="128" height="113"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>

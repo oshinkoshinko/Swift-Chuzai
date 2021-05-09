@@ -161,7 +161,7 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         
     }
     
-    
+    //検索ボタンクリック時
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         guard let searchText = searchBar.text else {
@@ -172,6 +172,7 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         
     }
     
+    //検索アクション
     func search(_ text:String) {
         
         var newUsers: [User] = []
@@ -180,6 +181,7 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
             
             //User構造体の中のどの要素か指定する userNameなど
             if $0.userName.contains(text) {
+                //検索ヒットしたデータを先頭に持ってくる
                 newUsers.insert($0,at: 0)
             } else {
                 newUsers.append($0)
