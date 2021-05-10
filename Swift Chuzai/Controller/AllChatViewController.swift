@@ -30,11 +30,25 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
     var documentID = String()
     
+    var activityIndicatorView = UIActivityIndicatorView()
+    
     //背景画像用配列
     var backImageArray = ["back1","back2","back3","back4","back5","back6","back7","back8","back9","back10","back11","back12","back13","back14","back15","back16","back17","back18","back19","back20",]
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        activityIndicatorView.center = view.center
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.color = .purple
+
+        view.addSubview(activityIndicatorView)
+        
+        
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
