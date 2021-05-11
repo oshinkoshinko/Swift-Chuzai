@@ -119,7 +119,6 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
         //登録したプロフ写真をFirebaseStorageへ送信
         self.sendToDBModel.sendProfileImageData(data: data!)
         
-        
         let user = Auth.auth().currentUser
         guard let userID = user?.uid else { fatalError() }
         let ref = db.collection("User").document(userID)
@@ -139,14 +138,6 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
             
         })
         
-        //前画面へ遷移
-        if urlString.isEmpty != true{
-
-            self.navigationController?.popViewController(animated: true)
-
-            
-        }
-        
     }
     
     
@@ -163,8 +154,16 @@ class UserEditViewController: UIViewController,UIImagePickerControllerDelegate,U
         { err in if let err = err{
             print("Error adding document: \(err)")
         } else {
-            print("Document added with ID: \(ref.documentID)")
+            print("imageString & Document added with ID: \(ref.documentID)")
         }}
+        
+        //前画面へ遷移
+        if urlString.isEmpty != true{
+
+            self.navigationController?.popViewController(animated: true)
+
+            
+        }
         
     }
     
