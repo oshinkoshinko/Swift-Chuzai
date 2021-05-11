@@ -151,9 +151,7 @@ class UserListViewController: UIViewController, UICollectionViewDataSource, UICo
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
-        
-        //画像url受け渡し
-        eachUserVC.imageUrl = imageURL
+
         //送信者uid受け渡し
         eachUserVC.uid = uid
         navigationController?.pushViewController(eachUserVC, animated: true)

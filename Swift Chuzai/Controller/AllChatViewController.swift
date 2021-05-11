@@ -8,6 +8,8 @@
 import UIKit
 import Firebase
 import SDWebImage
+import FirebaseAuth
+import FirebaseStorage
 
 class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -58,13 +60,12 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         //新規登録後、userimageにurlが入っていたら
-        if UserDefaults.standard.object(forKey: "userImage") != nil{
+//        if UserDefaults.standard.object(forKey: "userImage") != nil{
+//
+//            //imageStringにurlを文字列型で格納 アプリ内保存画像
+//            imageString = UserDefaults.standard.object(forKey: "userImage") as! String
             
-            //imageStringにurlを文字列型で格納
-            imageString = UserDefaults.standard.object(forKey: "userImage") as! String
-            
-            print("ログイン時")
-            print(imageString)
+
             
             let user = Auth.auth().currentUser
             let userID = user!.uid
@@ -98,12 +99,9 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                         loadMessages(roomName: roomName)
                         
                     }
-                    
                 }
             }
-                        
-        }
-
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,13 +112,14 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.navigationController?.isNavigationBarHidden = true
         
         tableView.reloadData()
-        
+        self.navigationItem.title = roomName
+        loadMessages(roomName: roomName)
     }
     
     //ロード　Firebaseの全メッセージ取得
     func loadMessages(roomName:String){
         
-        db.collection(roomName).order(by: "date").addSnapshotListener { [self] (snapShot, error) in
+        db.collection(roomName).order(by: "date").addSnapshotListener { (snapShot, error) in
             
             self.messages = []
             
@@ -137,12 +136,8 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 //for文
                 for doc in snapShotDoc{
                     
-                    print("ドキュメントID")
-                    print(doc.documentID)
-                    
                     //doc.dataでbodyやdateが入る
                     let data = doc.data()
-                    
                     //必要なデータを取得
                     if let sender = data["sender"] as? String, let body = data["body"] as? String, let imageString = data["imageString"] as? String, let documentID = data["documentID"] as? String, let uid = data["uid"] as? String{
                         
@@ -228,7 +223,7 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
             //Firebase内にデータを辞書型で追加
             var ref: DocumentReference? = nil
             
-            ref = db.collection(roomName).addDocument(data: ["sender":sender,"body":messageBody,"imageString":imageString,"uid":uid,"date":Date().timeIntervalSince1970,"documentID":""]) { [self] (error) in
+            ref = db.collection(roomName).addDocument(data: ["sender":sender,"body":messageBody,"imageString":imageString,"uid":uid,"date":Date().timeIntervalSince1970,"documentID":""]) { (error) in
                 
                 if error != nil{
                     
@@ -266,8 +261,6 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         let eachUserVC = storyboard?.instantiateViewController(identifier: "eachUserVC") as! EachUserViewController
         
-        //画像url受け渡し
-        eachUserVC.imageUrl = imageURL
         //送信者uid受け渡し
         eachUserVC.uid = uid
         navigationController?.pushViewController(eachUserVC, animated: true)

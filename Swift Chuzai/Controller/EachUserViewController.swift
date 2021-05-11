@@ -12,7 +12,6 @@ import FirebaseStorage
 
 class EachUserViewController: UIViewController {
 
-    var imageUrl = String()
     var uid = String()
     
     @IBOutlet weak var profile: UIImageView!
@@ -84,7 +83,7 @@ class EachUserViewController: UIViewController {
                     self.countryLabel.text = data["country"] as? String
                     self.phoneNumberLabel.text = data["phoneNumber"] as? String
                     self.introductionLabel.text = data["introduction"] as? String
-                    self.profile.sd_setImage(with: URL(string: imageUrl as! String), completed: nil)
+                    self.profile.sd_setImage(with: URL(string: data["imageString"] as! String), completed: nil)
                     
                 }
             }
