@@ -185,6 +185,20 @@ class AllChatViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         let message = messages[indexPath.row]
         cell.label.text = message.body
+        
+        let user = Auth.auth().currentUser
+        let userID = user!.uid
+        let ref = db.collection("User").document(userID)
+        
+        ref.getDocument{ [self] (document, error) in
+            if let document = document {
+                let data = document.data()
+                let loginImageString = data!["imageString"]
+                    
+                    imageString = loginImageString as! String
+
+            }
+        }
 
         
         if message.uid == Auth.auth().currentUser?.uid{
