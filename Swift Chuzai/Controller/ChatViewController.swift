@@ -166,7 +166,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let message = messages[indexPath.row]
         cell.label.text = message.body
         
-        if message.sender == Auth.auth().currentUser?.email{
+        if message.uid == Auth.auth().currentUser?.uid{
             
             //ユーザのメッセージであれば右側アイコンのみ表示
             cell.leftImageView.isHidden = true
