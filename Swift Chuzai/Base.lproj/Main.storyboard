@@ -357,10 +357,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OQp-ex-z0B">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OQp-ex-z0B">
                                 <rect key="frame" x="0.0" y="152" width="390" height="638"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OQp-ex-z0B" secondAttribute="height" multiplier="195:319" id="7xC-PB-tgJ"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8fl-vv-dmk">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -400,14 +402,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Fg-ID-yTf">
-                                <rect key="frame" x="16" y="105" width="358" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9Fg-ID-yTf">
+                                <rect key="frame" x="16" y="93" width="358" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="T59-H6-GFq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="jXY-oM-iRM"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WEB-PK-fww"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OQp-ex-z0B" firstAttribute="leading" secondItem="IBT-wX-P6x" secondAttribute="leading" id="S1f-Ov-R7i"/>
+                            <constraint firstItem="OQp-ex-z0B" firstAttribute="top" secondItem="9Fg-ID-yTf" secondAttribute="bottom" constant="3" id="bLg-iA-CcD"/>
+                            <constraint firstAttribute="bottom" secondItem="OQp-ex-z0B" secondAttribute="bottom" id="eg3-Mi-Pmt"/>
+                            <constraint firstItem="OQp-ex-z0B" firstAttribute="centerX" secondItem="9Fg-ID-yTf" secondAttribute="centerX" id="hNH-sW-TZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="OQp-ex-z0B" secondAttribute="trailing" id="k2i-Qj-NCD"/>
+                            <constraint firstItem="9Fg-ID-yTf" firstAttribute="leading" secondItem="IBT-wX-P6x" secondAttribute="leadingMargin" id="km8-hE-CGW"/>
+                            <constraint firstItem="9Fg-ID-yTf" firstAttribute="top" secondItem="WEB-PK-fww" secondAttribute="top" constant="93" id="u6H-4f-b9p"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="All Users" image="person.3" catalog="system" id="I9c-ER-XhA"/>
                     <navigationItem key="navigationItem" id="qmH-iC-lgR"/>
