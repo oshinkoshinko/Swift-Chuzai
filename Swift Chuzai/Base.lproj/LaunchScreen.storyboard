@@ -17,20 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="HWi-it-eLT">
-                                <rect key="frame" x="102" y="313" width="200" height="200"/>
+                                <rect key="frame" x="45" y="272" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="HxX-cV-6KW"/>
-                                    <constraint firstAttribute="width" constant="200" id="MD6-R2-OpN"/>
+                                    <constraint firstAttribute="width" constant="300" id="IEB-UT-JUk"/>
+                                    <constraint firstAttribute="height" constant="300" id="Zia-th-Jj5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="ZoE-7y-h1u"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="sfn-Hh-m2L"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HWi-it-eLT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="269" id="7pH-Mr-wHQ"/>
-                            <constraint firstItem="HWi-it-eLT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="102" id="LFU-26-ANO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HWi-it-eLT" secondAttribute="trailing" constant="88" id="sg7-Xq-3zX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HWi-it-eLT" secondAttribute="bottom" constant="297" id="vcR-Kd-kot"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HWi-it-eLT" secondAttribute="trailing" constant="45" id="0U4-d0-Nrh"/>
+                            <constraint firstItem="HWi-it-eLT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="228" id="CaN-Be-17n"/>
+                            <constraint firstItem="HWi-it-eLT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Ft6-OM-d1A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HWi-it-eLT" secondAttribute="bottom" constant="238" id="Z7L-SJ-idc"/>
                         </constraints>
                     </view>
                 </viewController>
