@@ -454,6 +454,21 @@
             </objects>
             <point key="canvasLocation" x="2534" y="913"/>
         </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="0PE-Ab-AI9">
+            <objects>
+                <viewController id="uOe-U5-ifq" customClass="SideMenuViewController" customModule="Swift_Chuzai" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sA2-dg-56C">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HoE-ex-0Gd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2La-ce-e2H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2611" y="-906"/>
+        </scene>
         <!--MyPage-->
         <scene sceneID="LJN-fg-ky3">
             <objects>
@@ -588,6 +603,11 @@
                                     <constraint firstAttribute="width" constant="150" id="Pwp-gA-JE1"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grp-gz-nnx">
+                                <rect key="frame" x="50" y="50" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="menu"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L3H-hT-Mz4"/>
                         <color key="backgroundColor" red="0.54257196190000001" green="0.77829158310000002" blue="0.86276125910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1083,6 +1103,7 @@
         <image name="back1" width="3024" height="4032"/>
         <image name="backimage" width="3639" height="5463"/>
         <image name="call" width="256" height="256"/>
+        <image name="menu" width="256" height="256"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
