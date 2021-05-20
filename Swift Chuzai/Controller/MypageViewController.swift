@@ -38,15 +38,14 @@ class MypageViewController: UIViewController {
         introductionLabel.layer.cornerRadius = 5
         introductionLabel.clipsToBounds = true
 
-        
-        
+
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
         
         //ユーザ情報取得  編集後に再描画する必要あるためviewWillAppear
         let user = Auth.auth().currentUser
@@ -103,6 +102,7 @@ class MypageViewController: UIViewController {
             
         
     }
+    
     
     /*
     // MARK: - Navigation
